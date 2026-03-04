@@ -1,0 +1,54 @@
+button {
+  cursor: pointer;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.Header .glnav-hamburger .hamburger-btn {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .Header .glnav-hamburger .hamburger-btn {
+    display: block;
+    position: absolute;
+  }
+}
+.Header .glnav-hamburger .logo {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .Header .glnav-hamburger .logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 4rem;
+  }
+}
+.Header .glnav .glnav-list {
+  display: flex;
+}
+@media screen and (max-width: 750px) {
+  .Header .glnav {
+    position: fixed;
+    height: calc(100% - 80px);
+    width: calc(100% - 80px);
+    transition: left 0.5s;
+    background: rgba(195, 195, 195, 0.9);
+    visibility: hidden;
+  }
+  .Header .glnav .glnav-list {
+    flex-direction: column;
+  }
+}
+
+.Main {
+  padding: 0;
+}
+@media screen and (max-width: 750px) {
+  .Main {
+    padding: 4em 0 0 1em;
+  }
+}/*# sourceMappingURL=common.css.map */

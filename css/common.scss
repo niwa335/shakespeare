@@ -1,0 +1,59 @@
+@use 'init-settings'as *;
+
+.Header {
+
+	// スマホ用グローバルナビゲーション
+	.glnav-hamburger {
+		.hamburger-btn {
+			display: none;
+
+			@include phone {
+				display: block;
+				position: absolute;
+			}
+		}
+
+		.logo {
+			display: none;
+
+			@include phone {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 4rem;
+			}
+		}
+
+	}
+
+	.glnav {
+		.glnav-list {
+			display: flex;
+		}
+
+		@include phone {
+			position: fixed;
+			height: calc(100% - 80px);
+			width: calc(100% - 80px);
+			transition: left 0.5s;
+			background: rgba(195, 195, 195, 0.9);
+			// visibility: visible;
+			visibility: hidden;
+
+			.glnav-list {
+				flex-direction: column;
+			}
+		}
+	}
+}
+
+.Main {
+	padding: 0;
+
+	@include phone {
+		padding: 4em 0 0 1em;
+	}
+}
+
+// .Footer {
+// }

@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+// 変数
+// size
+$pcWidth: 1320;
+$phoneWidth: 750;
+
+@mixin phone {
+	@media screen and (max-width: #{$phoneWidth}px) {
+		@content;
+	}
+}
+
+@mixin animation {
+	@media (prefers-reduced-motion: no-preference) {
+		@content;
+	}
+}
+
+button {
+	cursor: pointer;
+	border: none;
+}
+
+ul{
+	list-style: none;
+}
