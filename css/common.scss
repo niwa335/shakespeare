@@ -1,0 +1,107 @@
+@use 'settings'as *;
+
+.sheader {
+
+	// グローバルナビゲーション
+	.glnav {
+
+		// 横並び
+		.glnav-list {
+			display: flex;
+		}
+
+		// すべて隠す
+		@include phone {
+			position: absolute;
+			visibility: hidden;
+		}
+	}
+
+	@include phone {
+
+		// グローバルナビゲーション表示時
+		.glnav-showing {
+			position: fixed;
+			height: calc(100% - 200px);
+			width: calc(100% - 80px);
+			max-width: 300px;
+			top: 0;
+			left: 0;
+			transition: left 0.5s;
+			background: #fff;
+			z-index: 100;
+			visibility: visible;
+
+			.logo {
+				padding: .5rem 1rem;
+			}
+
+			.glnav-list {
+				padding: 0 1rem;
+			}
+
+			.glnav-item {
+				width: calc(100% - 8px);
+			}
+
+			.glnav-link {
+				padding: .5rem 0;
+				display: flex;
+			}
+
+		}
+	}
+
+	// スマホ用ボタン
+	.glnav-hamburger {
+		.hamburger-btn {
+			display: none;
+
+			@include phone {
+				display: block;
+				position: absolute;
+			}
+		}
+
+		.logo {
+			display: none;
+
+			@include phone {
+				display: block;
+				position: absolute;
+				top: .5rem;
+				left: 4rem;
+			}
+		}
+	}
+}
+
+// スマホ用グローバルナビゲーション表示時のbody
+@include phone {
+	.no-scroll {
+		overflow: hidden;
+
+		.glnav-close {
+			background: #000;
+			width: 100%;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: block;
+			opacity: 0.8;
+			transition: all 0.6s;
+		}
+	}
+}
+
+.smain {
+	padding: 0;
+
+	@include phone {
+		padding: 4em 0 0 1em;
+	}
+}
+
+// .sfooter {
+// }

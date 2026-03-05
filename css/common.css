@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format("woff2");
+}
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: #333;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.sheader .glnav .glnav-list {
+  display: flex;
+}
+@media screen and (max-width: 750px) {
+  .sheader .glnav {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 750px) {
+  .sheader .glnav-showing {
+    position: fixed;
+    height: calc(100% - 200px);
+    width: calc(100% - 80px);
+    max-width: 300px;
+    top: 0;
+    left: 0;
+    transition: left 0.5s;
+    background: #fff;
+    z-index: 100;
+    visibility: visible;
+  }
+  .sheader .glnav-showing .logo {
+    padding: 0.5rem 1rem;
+  }
+  .sheader .glnav-showing .glnav-list {
+    padding: 0 1rem;
+  }
+  .sheader .glnav-showing .glnav-item {
+    width: calc(100% - 8px);
+  }
+  .sheader .glnav-showing .glnav-link {
+    padding: 0.5rem 0;
+    display: flex;
+  }
+}
+.sheader .glnav-hamburger .hamburger-btn {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .sheader .glnav-hamburger .hamburger-btn {
+    display: block;
+    position: absolute;
+  }
+}
+.sheader .glnav-hamburger .logo {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .sheader .glnav-hamburger .logo {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 4rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .no-scroll {
+    overflow: hidden;
+  }
+  .no-scroll .glnav-close {
+    background: #000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    opacity: 0.8;
+    transition: all 0.6s;
+  }
+}
+.smain {
+  padding: 0;
+}
+@media screen and (max-width: 750px) {
+  .smain {
+    padding: 4em 0 0 1em;
+  }
+}/*# sourceMappingURL=common.css.map */

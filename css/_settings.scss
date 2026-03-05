@@ -1,0 +1,42 @@
+@use 'sass:math';
+
+// 変数
+// size
+$pcWidth: 1320;
+$phoneWidth: 750;
+
+@mixin phone {
+	@media screen and (max-width: #{$phoneWidth}px) {
+		@content;
+	}
+}
+
+@mixin animation {
+	@media (prefers-reduced-motion: no-preference) {
+		@content;
+	}
+}
+
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 400;
+	src: url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format('woff2');
+}
+
+body {
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: .1px;
+	color: #333;
+}
+
+ul,
+li{
+	margin: 0;
+	padding: 0;	
+}
+
+ul {
+	list-style: none;
+}
