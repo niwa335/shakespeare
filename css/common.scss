@@ -1,145 +1,208 @@
-@use 'settings'as *;
+@use "settings" as *;
 
 .bHeader {
+  transition: 0.5s;
+  // .hide {
+  //   transform: translateY(-100%);
+  // }
 
-	// グローバルナビゲーション
-	.glnav {
-		display: flex;
+  // グローバルナビゲーション
+  .gnav {
+    display: flex;
+    width: 100%;
+    align-items: center;
 
-		// 横並び
-		.glnav-list {
-			display: flex;
-		}
+    .gnav-content {
+      width: 100%;
+      align-items: center;
 
-		.glnav-item {
-			padding-block: 8px 8px;
-			width: auto;
-		}
+      // 横並び
+      .gnav-list {
+        display: flex;
 
-		.glnav-link {
-			display: flex;
-			border-radius: 4px;
-			padding-inline-start: 12px;
-			padding-inline-end: 12px;
-			width: auto;
-			align-items: center;
-			letter-spacing: .30px;
-			min-height: 48px;
+        .gnav-item {
+          width: 20%;
+          max-width: 7.5rem;
+          border-right: 1px solid #e4ad71;
+          &:nth-of-type(5) {
+            border-right: none;
+          }
+        }
 
-			&:hover {
-				background: #eee;
-			}
-		}
+        .gnav-link {
+          display: flex;
+          border-radius: 0.25rem;
+          padding-inline-start: 0.75rem;
+          padding-inline-end: 0.75rem;
+          width: auto;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0.3px;
+          min-height: 3rem;
 
-		// すべて隠す
-		@include phone {
-			position: absolute;
-			visibility: hidden;
-		}
-	}
+          &:hover {
+            background: #eee;
+          }
+        }
+      }
+    }
+
+    // すべて隠す
+    @include phone {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
+  @include phone {
+    // スマホ用
+    .gnav-showing {
+      position: fixed;
+      height: calc(100% - 12.5rem);
+      width: calc(100% - 5rem);
+      max-width: 18rem;
+      top: 0;
+      left: 0;
+      transition: left 0.5s;
+      background: #fff;
+      z-index: 820;
+      visibility: visible;
+
+      .logo {
+        padding: 0.5rem 1rem;
+      }
+
+      .gnav-list {
+        flex-direction: column;
+      }
+
+      .gnav-item {
+        width: calc(100% - 0.5rem);
+      }
+
+      .gnav-link {
+        display: flex;
+        height: 100%;
+        border-end-end-radius: 6.25rem;
+        border-start-end-radius: 6.25rem;
+        padding-inline-start: 0.5rem;
+        padding-inline-end: 0.75rem;
+        align-items: center;
+        letter-spacing: 0.3px;
+        min-height: 3rem;
+        border-left: 1rem solid #e4ad71;
+
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+  }
+
+  // スマホ用ボタン
+  .gnav-hamburger {
+    .hamburger-btn {
+      display: none;
+
+      @include phone {
+        display: flex;
+        position: relative;
+        width: 3.5rem;
+        height: 3.5rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25rem;
+
+        &:hover {
+          background: #eee;
+          border: #616662 solid 2px;
+        }
+      }
+    }
+
+    .logo {
+      display: none;
+
+      @include phone {
+        display: block;
+        position: absolute;
+        top: 0.5rem;
+        left: 4rem;
+      }
+    }
+  }
 }
-
-@include phone {
-
-	// スマホ用
-	.glnav-showing {
-		position: fixed;
-		height: calc(100% - 200px);
-		width: calc(100% - 80px);
-		max-width: 300px;
-		top: 0;
-		left: 0;
-		transition: left 0.5s;
-		background: #fff;
-		z-index: 100;
-		visibility: visible;
-
-		.logo {
-			padding: .5rem 1rem;
-		}
-
-		.glnav-list {
-			flex-direction: column;
-		}
-
-		.glnav-item {
-			width: calc(100% - 8px);
-		}
-
-		.glnav-link {
-			display: flex;
-			height: 100%;
-			border-end-end-radius: 100px;
-			border-start-end-radius: 100px;
-			padding-inline-start: 20px;
-			padding-inline-end: 12px;
-			align-items: center;
-			letter-spacing: .30px;
-			min-height: 48px;
-
-			&:hover {
-				background: #eee;
-			}
-		}
-	}
-}
-
-
-// スマホ用ボタン
-.glnav-hamburger {
-	.hamburger-btn {
-		display: none;
-
-		@include phone {
-			display: flex;
-			position: relative;
-			width: 54px;
-			height: 54px;
-			align-items: center;
-			justify-content: center;
-			border-radius: 4px;
-
-			&:hover {
-				background: #eee;
-				border: #616662 solid 2px;
-			}
-		}
-	}
-
-	.logo {
-		display: none;
-
-		@include phone {
-			display: block;
-			position: absolute;
-			top: .5rem;
-			left: 4rem;
-		}
-	}
-}
-
 
 // スマホ用グローバルナビゲーション表示時のbody
 @include phone {
-	.no-scroll {
-		overflow: hidden;
+  .no-scroll {
+    overflow: hidden;
+    display: block;
+    opacity: 1;
 
-		.glnav-close {
-			background: #000;
-			width: 100%;
-			position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			display: block;
-			opacity: 0.8;
-			transition: all 0.6s;
-		}
-	}
+    .gnav-close {
+      background: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      transition: all 0.6s;
+      z-index: 810;
+    }
+  }
 }
 
-// .bMain {
-// }
+.bMain {
+  .plays-headline {
+    display: block;
+    max-width: 10rem;
+    padding-inline-start: 1.25rem;
+    background: linear-gradient(transparent 70%, #e4ad71 0%);
+  }
+
+  .plays-list {
+    display: grid;
+    grid-gap: 1rem 1rem;
+    grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
+
+    @include phone {
+      grid-template-columns: repeat(4, minmax(0.5rem, 1fr));
+    }
+
+    .plays-list-item {
+      grid-column-end: span 3;
+
+      @include tablet {
+        grid-column-end: span 6;
+      }
+
+      @include phone {
+        grid-column-end: span 4;
+      }
+
+      .plays-list-item-inner {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: 94px;
+        position: relative;
+        align-items: center;
+
+        .plays-media-container {
+          display: flex;
+        }
+        .plays-summary {
+          padding-inline: 1rem;
+
+          .plays-summary-title {
+            display: inline;
+            border-bottom: 3px solid #e4ad71;
+          }
+        }
+      }
+    }
+  }
+}
 
 // .bFooter {
 // }

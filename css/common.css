@@ -36,96 +36,116 @@ button {
   border: none;
 }
 
-.bHeader .glnav {
+h1,
+div {
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
+}
+
+.bHeader {
+  transition: 0.5s;
+}
+.bHeader .gnav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.bHeader .gnav .gnav-content {
+  width: 100%;
+  align-items: center;
+}
+.bHeader .gnav .gnav-content .gnav-list {
   display: flex;
 }
-.bHeader .glnav .glnav-list {
-  display: flex;
+.bHeader .gnav .gnav-content .gnav-list .gnav-item {
+  width: 20%;
+  max-width: 7.5rem;
+  border-right: 1px solid #e4ad71;
 }
-.bHeader .glnav .glnav-item {
-  padding-block: 8px 8px;
-  width: auto;
+.bHeader .gnav .gnav-content .gnav-list .gnav-item:nth-of-type(5) {
+  border-right: none;
 }
-.bHeader .glnav .glnav-link {
+.bHeader .gnav .gnav-content .gnav-list .gnav-link {
   display: flex;
-  border-radius: 4px;
-  padding-inline-start: 12px;
-  padding-inline-end: 12px;
+  border-radius: 0.25rem;
+  padding-inline-start: 0.75rem;
+  padding-inline-end: 0.75rem;
   width: auto;
   align-items: center;
+  justify-content: center;
   letter-spacing: 0.3px;
-  min-height: 48px;
+  min-height: 3rem;
 }
-.bHeader .glnav .glnav-link:hover {
+.bHeader .gnav .gnav-content .gnav-list .gnav-link:hover {
   background: #eee;
 }
-@media screen and (max-width: 750px) {
-  .bHeader .glnav {
+@media (max-width: 750px) {
+  .bHeader .gnav {
     position: absolute;
     visibility: hidden;
   }
 }
-
-@media screen and (max-width: 750px) {
-  .glnav-showing {
+@media (max-width: 750px) {
+  .bHeader .gnav-showing {
     position: fixed;
-    height: calc(100% - 200px);
-    width: calc(100% - 80px);
-    max-width: 300px;
+    height: calc(100% - 12.5rem);
+    width: calc(100% - 5rem);
+    max-width: 18rem;
     top: 0;
     left: 0;
     transition: left 0.5s;
     background: #fff;
-    z-index: 100;
+    z-index: 820;
     visibility: visible;
   }
-  .glnav-showing .logo {
+  .bHeader .gnav-showing .logo {
     padding: 0.5rem 1rem;
   }
-  .glnav-showing .glnav-list {
+  .bHeader .gnav-showing .gnav-list {
     flex-direction: column;
   }
-  .glnav-showing .glnav-item {
-    width: calc(100% - 8px);
+  .bHeader .gnav-showing .gnav-item {
+    width: calc(100% - 0.5rem);
   }
-  .glnav-showing .glnav-link {
+  .bHeader .gnav-showing .gnav-link {
     display: flex;
     height: 100%;
-    border-end-end-radius: 100px;
-    border-start-end-radius: 100px;
-    padding-inline-start: 20px;
-    padding-inline-end: 12px;
+    border-end-end-radius: 6.25rem;
+    border-start-end-radius: 6.25rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.75rem;
     align-items: center;
     letter-spacing: 0.3px;
-    min-height: 48px;
+    min-height: 3rem;
+    border-left: 1rem solid #e4ad71;
   }
-  .glnav-showing .glnav-link:hover {
+  .bHeader .gnav-showing .gnav-link:hover {
     background: #eee;
   }
 }
-.glnav-hamburger .hamburger-btn {
+.bHeader .gnav-hamburger .hamburger-btn {
   display: none;
 }
-@media screen and (max-width: 750px) {
-  .glnav-hamburger .hamburger-btn {
+@media (max-width: 750px) {
+  .bHeader .gnav-hamburger .hamburger-btn {
     display: flex;
     position: relative;
-    width: 54px;
-    height: 54px;
+    width: 3.5rem;
+    height: 3.5rem;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
-  .glnav-hamburger .hamburger-btn:hover {
+  .bHeader .gnav-hamburger .hamburger-btn:hover {
     background: #eee;
     border: #616662 solid 2px;
   }
 }
-.glnav-hamburger .logo {
+.bHeader .gnav-hamburger .logo {
   display: none;
 }
-@media screen and (max-width: 750px) {
-  .glnav-hamburger .logo {
+@media (max-width: 750px) {
+  .bHeader .gnav-hamburger .logo {
     display: block;
     position: absolute;
     top: 0.5rem;
@@ -133,19 +153,66 @@ button {
   }
 }
 
-@media screen and (max-width: 750px) {
+@media (max-width: 750px) {
   .no-scroll {
     overflow: hidden;
+    display: block;
+    opacity: 1;
   }
-  .no-scroll .glnav-close {
-    background: #000;
+  .no-scroll .gnav-close {
+    background: rgba(0, 0, 0, 0.8);
     width: 100%;
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
-    display: block;
-    opacity: 0.8;
     transition: all 0.6s;
+    z-index: 810;
   }
+}
+.bMain .plays-headline {
+  display: block;
+  max-width: 10rem;
+  padding-inline-start: 1.25rem;
+  background: linear-gradient(transparent 70%, #e4ad71 0%);
+}
+.bMain .plays-list {
+  display: grid;
+  grid-gap: 1rem 1rem;
+  grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
+}
+@media (max-width: 750px) {
+  .bMain .plays-list {
+    grid-template-columns: repeat(4, minmax(0.5rem, 1fr));
+  }
+}
+.bMain .plays-list .plays-list-item {
+  grid-column-end: span 3;
+}
+@media (max-width: 1250px) {
+  .bMain .plays-list .plays-list-item {
+    grid-column-end: span 6;
+  }
+}
+@media (max-width: 750px) {
+  .bMain .plays-list .plays-list-item {
+    grid-column-end: span 4;
+  }
+}
+.bMain .plays-list .plays-list-item .plays-list-item-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 94px;
+  position: relative;
+  align-items: center;
+}
+.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-media-container {
+  display: flex;
+}
+.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary {
+  padding-inline: 1rem;
+}
+.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary .plays-summary-title {
+  display: inline;
+  border-bottom: 3px solid #e4ad71;
 }/*# sourceMappingURL=common.css.map */

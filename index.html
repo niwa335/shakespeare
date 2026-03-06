@@ -21,15 +21,16 @@
 
   <link rel="icon" type="image/png" href="/img/icon/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/common.css?ver=20260304">
-  <script async src="js/common.js"></script>
+  <link rel="stylesheet" href="css/common.css?ver=20260306">
+  <script async src="js/common.js?ver=20260306""></script>
 </head>
 
-<body class="sbody">
+<body class="body">
+  <div class="test">
   <header class="bHeader">
     <!--グローバルナビゲーション-->
     <!--スマホ用-->
-    <div class="glnav-hamburger">
+    <div class="gnav-hamburger">
       <button class="hamburger-btn" aria-haspopup="true">
         <img src="img/hamburger-bt.png" alt="MENU">
       </button>
@@ -40,48 +41,140 @@
       </div>
     </div>
     <!--共通ナビゲーション-->
-    <div class="glnav">
+    <div class="gnav">
       <div class="logo">
         <a href="https://niwa335.github.io/shakespeare/">
           <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
         </a>
       </div>
-      <nav class="glnav-content">
-        <ul class="glnav-list">
-          <li class="glnav-item"><a class="glnav-link" href="fourGreatTragedies.html">四大悲劇</a></li>
-          <li class="glnav-item"><a class="glnav-link" href="tragedies.html">その他の悲劇</a></li>
-          <li class="glnav-item"><a class="glnav-link" href="histories.html">史劇</a></li>
-          <li class="glnav-item"><a class="glnav-link" href="comedies.html">喜劇</a></li>
-          <li class="glnav-item"><a class="glnav-link" href="romances.html">ロマンス劇</a></li>
+      <nav class="gnav-content">
+        <ul class="gnav-list">
+          <li class="gnav-item"><a class="gnav-link" href="fourGreatTragedies.html">四大悲劇</a></li>
+          <li class="gnav-item"><a class="gnav-link" href="tragedies.html">他の悲劇</a></li>
+          <li class="gnav-item"><a class="gnav-link" href="histories.html">史劇</a></li>
+          <li class="gnav-item"><a class="gnav-link" href="comedies.html">喜劇</a></li>
+          <li class="gnav-item glnav-item-last"><a class="gnav-link" href="romances.html">ロマンス劇</a></li>
         </ul>
       </nav>
     </div>
-    <div class="glnav-close" role="button" tabindex="0"></div>
+    <div class="gnav-close" role="button" tabindex="1"></div>
   </header>
   <main class="bMain">
     <div>
-      <h1>シェイクスピア作品 かんたん あらすじ 登場人物</h1>
+      <h1>シェイクスピア作品 <wbr>かんたん <wbr>あらすじ <wbr>登場人物</h1>
     </div>
     <section>
-      <h2>四大悲劇</h2>
-      <ul>
-        <li>
-          <a href="fourGreatTragedies.html#hamlet" target="_blank">
-            <picture>
-              <source media="(min-width: 751px)" srcset="img/plays/hamlet.png" width="171" height="63">
-              <img src="img/plays/hamlet.png" alt="" width="135" height="192" />
-            </picture>
+      <h2 class="plays-headline">四大悲劇</h2>
+      <ul class="plays-list">
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#hamlet">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/hamlet.png" alt="ハムレット" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">ハムレット</h3>
+                <div><p>ハムレットという王子様が復讐をしました。</p></div>
+              </div>
+            </div>
           </a>
         </li>
-        <li>
-          <a href="fourGreatTragedies.html#kingLear" target="_blank" rel="noopener"><img alt="" width="135" height="192"
-              src="img/plays/kingLear.png" /></a></li>
-        <li>
-          <a href="fourGreatTragedies.html#othello" target="_blank" rel="noopener"><img alt="" width="135" height="192"
-              src="img/plays/othello.png" /></a></li>
-        <li>
-          <a href="fourGreatTragedies.html#macbeth" target="_blank" rel="noopener"><img alt="" width="135" height="192"
-              src="img/plays/macbeth.png" /></a></li>
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#kingLear">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/kingLear.png" alt="リア王" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">リア王</h3>
+                <div><p>リア王という王様が家族との関係を失いました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#othello">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/othello.png" alt="オセロー" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">オセロー</h3>
+                <div><p>オセローという男が嫉妒で狂いました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#macbeth">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/macbeth.png" alt="マクベス" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">マクベス</h3>
+                <div><p>マクベスという男が権力欲で狂いました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="plays-headline">他の悲劇</h2>
+      <ul class="plays-list">
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#hamlet">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/hamlet.png" alt="ハムレット" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">ハムレット</h3>
+                <div><p>ハムレットという王子様が復讐をしました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#kingLear">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/kingLear.png" alt="リア王" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">リア王</h3>
+                <div><p>リア王という王様が家族との関係を失いました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#othello">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/othello.png" alt="オセロー" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">オセロー</h3>
+                <div><p>オセローという男が嫉妒で狂いました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="plays-list-item">
+          <a href="fourGreatTragedies.html#macbeth">
+            <div class="plays-list-item-inner">
+              <div class="plays-media-container">
+                <img src="img/plays/macbeth.png" alt="マクベス" width="180" height="250"/>
+              </div>
+              <div class="plays-summary">
+                <h3 class="plays-summary-title">マクベス</h3>
+                <div><p>マクベスという男が権力欲で狂いました。</p></div>
+              </div>
+            </div>
+          </a>
+        </li>
       </ul>
     </section>
   </main>

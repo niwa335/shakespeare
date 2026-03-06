@@ -1,51 +1,64 @@
-@use 'sass:math';
+@use "sass:math";
 
 // 変数
 // size
-$pcWidth: 1320;
 $phoneWidth: 750;
+$tabWidth: 1250;
 
 @mixin phone {
-	@media screen and (max-width: #{$phoneWidth}px) {
-		@content;
-	}
+  @media (max-width: #{$phoneWidth}px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tabWidth}px) {
+    @content;
+  }
 }
 
 @font-face {
-	font-family: 'Noto Sans JP';
-	font-style: normal;
-	font-weight: 400;
-	src: url(https://fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format('woff2');
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2)
+    format("woff2");
 }
 
 body {
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: .1px;
-	color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: #333;
 }
 
 ul,
 li,
 button {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 img {
-	border: none;
+  border: none;
 }
 
 button {
-	background: none;
-	border: none;
+  background: none;
+  border: none;
+}
+
+h1,
+div {
+  word-break: auto-phrase;
+  overflow-wrap: anywhere;
 }
