@@ -43,12 +43,21 @@ div {
 }
 
 .bHeader {
-  transition: 0.5s;
+  top: 0px;
+  position: sticky;
+  background: #fff;
+  z-index: 2;
+}
+.bHeader.hide {
+  transform: translate3d(0, -140px, 0);
 }
 .bHeader .gnav {
   display: flex;
   width: 100%;
   align-items: center;
+}
+.bHeader .gnav .logo-link {
+  display: flex;
 }
 .bHeader .gnav .gnav-content {
   width: 100%;
@@ -123,33 +132,37 @@ div {
     background: #eee;
   }
 }
-.bHeader .gnav-hamburger .hamburger-btn {
+.bHeader .gnav-hamburger {
   display: none;
 }
 @media (max-width: 750px) {
+  .bHeader .gnav-hamburger {
+    align-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    min-height: 4rem;
+    position: relative;
+    width: 100%;
+  }
   .bHeader .gnav-hamburger .hamburger-btn {
     display: flex;
-    position: relative;
-    width: 3.5rem;
-    height: 3.5rem;
     align-items: center;
     justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 0.25rem;
   }
   .bHeader .gnav-hamburger .hamburger-btn:hover {
     background: #eee;
     border: #616662 solid 2px;
   }
-}
-.bHeader .gnav-hamburger .logo {
-  display: none;
-}
-@media (max-width: 750px) {
   .bHeader .gnav-hamburger .logo {
-    display: block;
-    position: absolute;
-    top: 0.5rem;
-    left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
   }
 }
 

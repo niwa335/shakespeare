@@ -1,28 +1,23 @@
+let pos = 0;
+let headerBar = document.querySelector('.bHeader');
 let page = document.querySelector('.page');
 let body = document.querySelector('.body');
 let hamBtn = document.querySelector('.hamburger-btn');
 let nav = document.querySelector('.gnav');
 let navClose = document.querySelector('.gnav-close');
 
-// let window = document.querySelector('window');
-// let header = document.querySelector('.bHeader');
-// let scrollHeight = header.outerHeight();
-// let main = document.querySelector('.bMain');
-// let headerTop = header.offset().top;
-
-//   function handleScroll() {
-//     var value = window.scrollTop();
-//     if ( value > headerTop ) {
-//       header.classList.add('hyde');
-//       main.style.marginTop = scrollHeight + 'px';
-//     } else {
-//       header.classList.remove('hyde');
-//       main.style.marginTop = '0';
-//     }
-//   }
-
-//   handleScroll();
-//   window.addEventListener('scroll', handleScroll);
+// グローバルナビゲーション追従
+function handleScroll() {
+    if(window.scrollY < pos ){
+        // 上にスクロールしたとき
+        headerBar.classList.remove('hide');
+    }else{
+        // 下にスクロールしたとき
+        headerBar.classList.add('hide');
+    }
+    pos = window.scrollY;
+}
+window.addEventListener('scroll', handleScroll);
 
 // グローバルナビゲーションの表示と非表示
 function gnavShowing() {
