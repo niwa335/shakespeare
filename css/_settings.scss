@@ -11,17 +11,11 @@ $phoneWidth: 750;
 	}
 }
 
-@mixin animation {
-	@media (prefers-reduced-motion: no-preference) {
-		@content;
-	}
-}
-
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 400;
-	src: url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format('woff2');
+	src: url(https://fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format('woff2');
 }
 
 body {
@@ -32,11 +26,26 @@ body {
 }
 
 ul,
-li{
+li,
+button {
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 ul {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+img {
+	border: none;
+}
+
+button {
+	background: none;
+	border: none;
 }

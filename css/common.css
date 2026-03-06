@@ -2,7 +2,7 @@
   font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 400;
-  src: url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format("woff2");
+  src: url(https://fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format("woff2");
 }
 body {
   font-size: 1rem;
@@ -12,7 +12,8 @@ body {
 }
 
 ul,
-li {
+li,
+button {
   margin: 0;
   padding: 0;
 }
@@ -21,17 +22,52 @@ ul {
   list-style: none;
 }
 
-.sheader .glnav .glnav-list {
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  border: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.bHeader .glnav {
   display: flex;
 }
+.bHeader .glnav .glnav-list {
+  display: flex;
+}
+.bHeader .glnav .glnav-item {
+  padding-block: 8px 8px;
+  width: auto;
+}
+.bHeader .glnav .glnav-link {
+  display: flex;
+  border-radius: 4px;
+  padding-inline-start: 12px;
+  padding-inline-end: 12px;
+  width: auto;
+  align-items: center;
+  letter-spacing: 0.3px;
+  min-height: 48px;
+}
+.bHeader .glnav .glnav-link:hover {
+  background: #eee;
+}
 @media screen and (max-width: 750px) {
-  .sheader .glnav {
+  .bHeader .glnav {
     position: absolute;
     visibility: hidden;
   }
 }
+
 @media screen and (max-width: 750px) {
-  .sheader .glnav-showing {
+  .glnav-showing {
     position: fixed;
     height: calc(100% - 200px);
     width: calc(100% - 80px);
@@ -43,34 +79,53 @@ ul {
     z-index: 100;
     visibility: visible;
   }
-  .sheader .glnav-showing .logo {
+  .glnav-showing .logo {
     padding: 0.5rem 1rem;
   }
-  .sheader .glnav-showing .glnav-list {
-    padding: 0 1rem;
+  .glnav-showing .glnav-list {
+    flex-direction: column;
   }
-  .sheader .glnav-showing .glnav-item {
+  .glnav-showing .glnav-item {
     width: calc(100% - 8px);
   }
-  .sheader .glnav-showing .glnav-link {
-    padding: 0.5rem 0;
+  .glnav-showing .glnav-link {
     display: flex;
+    height: 100%;
+    border-end-end-radius: 100px;
+    border-start-end-radius: 100px;
+    padding-inline-start: 20px;
+    padding-inline-end: 12px;
+    align-items: center;
+    letter-spacing: 0.3px;
+    min-height: 48px;
+  }
+  .glnav-showing .glnav-link:hover {
+    background: #eee;
   }
 }
-.sheader .glnav-hamburger .hamburger-btn {
+.glnav-hamburger .hamburger-btn {
   display: none;
 }
 @media screen and (max-width: 750px) {
-  .sheader .glnav-hamburger .hamburger-btn {
-    display: block;
-    position: absolute;
+  .glnav-hamburger .hamburger-btn {
+    display: flex;
+    position: relative;
+    width: 54px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  .glnav-hamburger .hamburger-btn:hover {
+    background: #eee;
+    border: #616662 solid 2px;
   }
 }
-.sheader .glnav-hamburger .logo {
+.glnav-hamburger .logo {
   display: none;
 }
 @media screen and (max-width: 750px) {
-  .sheader .glnav-hamburger .logo {
+  .glnav-hamburger .logo {
     display: block;
     position: absolute;
     top: 0.5rem;
@@ -92,13 +147,5 @@ ul {
     display: block;
     opacity: 0.8;
     transition: all 0.6s;
-  }
-}
-.smain {
-  padding: 0;
-}
-@media screen and (max-width: 750px) {
-  .smain {
-    padding: 4em 0 0 1em;
   }
 }/*# sourceMappingURL=common.css.map */

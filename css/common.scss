@@ -1,13 +1,34 @@
 @use 'settings'as *;
 
-.sheader {
+.bHeader {
 
 	// グローバルナビゲーション
 	.glnav {
+		display: flex;
 
 		// 横並び
 		.glnav-list {
 			display: flex;
+		}
+
+		.glnav-item {
+			padding-block: 8px 8px;
+			width: auto;
+		}
+
+		.glnav-link {
+			display: flex;
+			border-radius: 4px;
+			padding-inline-start: 12px;
+			padding-inline-end: 12px;
+			width: auto;
+			align-items: center;
+			letter-spacing: .30px;
+			min-height: 48px;
+
+			&:hover {
+				background: #eee;
+			}
 		}
 
 		// すべて隠す
@@ -16,65 +37,87 @@
 			visibility: hidden;
 		}
 	}
+}
 
-	@include phone {
+@include phone {
 
-		// グローバルナビゲーション表示時
-		.glnav-showing {
-			position: fixed;
-			height: calc(100% - 200px);
-			width: calc(100% - 80px);
-			max-width: 300px;
-			top: 0;
-			left: 0;
-			transition: left 0.5s;
-			background: #fff;
-			z-index: 100;
-			visibility: visible;
-
-			.logo {
-				padding: .5rem 1rem;
-			}
-
-			.glnav-list {
-				padding: 0 1rem;
-			}
-
-			.glnav-item {
-				width: calc(100% - 8px);
-			}
-
-			.glnav-link {
-				padding: .5rem 0;
-				display: flex;
-			}
-
-		}
-	}
-
-	// スマホ用ボタン
-	.glnav-hamburger {
-		.hamburger-btn {
-			display: none;
-
-			@include phone {
-				display: block;
-				position: absolute;
-			}
-		}
+	// スマホ用
+	.glnav-showing {
+		position: fixed;
+		height: calc(100% - 200px);
+		width: calc(100% - 80px);
+		max-width: 300px;
+		top: 0;
+		left: 0;
+		transition: left 0.5s;
+		background: #fff;
+		z-index: 100;
+		visibility: visible;
 
 		.logo {
-			display: none;
+			padding: .5rem 1rem;
+		}
 
-			@include phone {
-				display: block;
-				position: absolute;
-				top: .5rem;
-				left: 4rem;
+		.glnav-list {
+			flex-direction: column;
+		}
+
+		.glnav-item {
+			width: calc(100% - 8px);
+		}
+
+		.glnav-link {
+			display: flex;
+			height: 100%;
+			border-end-end-radius: 100px;
+			border-start-end-radius: 100px;
+			padding-inline-start: 20px;
+			padding-inline-end: 12px;
+			align-items: center;
+			letter-spacing: .30px;
+			min-height: 48px;
+
+			&:hover {
+				background: #eee;
 			}
 		}
 	}
 }
+
+
+// スマホ用ボタン
+.glnav-hamburger {
+	.hamburger-btn {
+		display: none;
+
+		@include phone {
+			display: flex;
+			position: relative;
+			width: 54px;
+			height: 54px;
+			align-items: center;
+			justify-content: center;
+			border-radius: 4px;
+
+			&:hover {
+				background: #eee;
+				border: #616662 solid 2px;
+			}
+		}
+	}
+
+	.logo {
+		display: none;
+
+		@include phone {
+			display: block;
+			position: absolute;
+			top: .5rem;
+			left: 4rem;
+		}
+	}
+}
+
 
 // スマホ用グローバルナビゲーション表示時のbody
 @include phone {
@@ -95,13 +138,8 @@
 	}
 }
 
-.smain {
-	padding: 0;
+// .bMain {
+// }
 
-	@include phone {
-		padding: 4em 0 0 1em;
-	}
-}
-
-// .sfooter {
+// .bFooter {
 // }
