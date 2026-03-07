@@ -79,11 +79,12 @@
       width: calc(100% - 5rem);
       max-width: 18rem;
       top: 0;
-      left: 0;
-      transition: left 0.5s;
+      right: 0;
+      transition: right 0.5s;
       background: #fff;
       z-index: 820;
       visibility: visible;
+      border-radius: 0.25rem;
 
       .logo {
         padding: 0.5rem 1rem;
@@ -130,10 +131,19 @@
       position: relative;
       width: 100%;
 
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+
       .hamburger-btn {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: absolute;
+        right: 0;
         width: 3.5rem;
         height: 3.5rem;
         border-radius: 0.25rem;
@@ -142,13 +152,6 @@
           background: #eee;
           border: #616662 solid 2px;
         }
-      }
-
-      .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
       }
     }
   }
@@ -251,6 +254,7 @@
 .bFooter {
   .footer-content {
     width: 100%;
+    padding-bottom: 2rem;
 
     // 横並び
     .footer-list {
@@ -288,7 +292,7 @@
         flex-direction: column;
 
         .footer-item {
-          width: 12rem;
+          width: calc(100% - 1rem);
           max-width: none;
           border: none;
         }
@@ -304,5 +308,10 @@
         }
       }
     }
+  }
+  .copyright {
+    display: block;
+    text-align: center;
+    padding-bottom: 2rem;
   }
 }

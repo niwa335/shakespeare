@@ -109,11 +109,12 @@ div {
     width: calc(100% - 5rem);
     max-width: 18rem;
     top: 0;
-    left: 0;
-    transition: left 0.5s;
+    right: 0;
+    transition: right 0.5s;
     background: #fff;
     z-index: 820;
     visibility: visible;
+    border-radius: 0.25rem;
   }
   .bHeader .gnav-showing .logo {
     padding: 0.5rem 1rem;
@@ -154,10 +155,18 @@ div {
     position: relative;
     width: 100%;
   }
+  .bHeader .gnav-hamburger .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
   .bHeader .gnav-hamburger .hamburger-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 0;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 0.25rem;
@@ -165,12 +174,6 @@ div {
   .bHeader .gnav-hamburger .hamburger-btn:hover {
     background: #eee;
     border: #616662 solid 2px;
-  }
-  .bHeader .gnav-hamburger .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
   }
 }
 
@@ -257,6 +260,7 @@ div {
 
 .bFooter .footer-content {
   width: 100%;
+  padding-bottom: 2rem;
 }
 .bFooter .footer-content .footer-list {
   display: flex;
@@ -289,7 +293,7 @@ div {
     flex-direction: column;
   }
   .bFooter .footer-content .footer-list .footer-item {
-    width: 12rem;
+    width: calc(100% - 1rem);
     max-width: none;
     border: none;
   }
@@ -301,4 +305,9 @@ div {
   .bFooter .footer-content .footer-list .footer-link:hover {
     background: #eee;
   }
+}
+.bFooter .copyright {
+  display: block;
+  text-align: center;
+  padding-bottom: 2rem;
 }/*# sourceMappingURL=common.css.map */
