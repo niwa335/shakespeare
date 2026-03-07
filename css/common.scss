@@ -1,13 +1,22 @@
 @use "settings" as *;
 
 .bHeader {
-  top: 0px;
-  position: sticky;
-  background: #fff;
-  z-index: 2;
+  position: static;
+  transition: 0.5s;
 
   &.hide {
     transform: translate3d(0, -140px, 0);
+  }
+
+  &.shadow {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background: #fff;
+    z-index: 2;
+    box-shadow:
+      0 1px 2px 0 rgba(60, 64, 67, 0.3),
+      0 1px 3px 1px rgba(60, 64, 67, 0.15);
   }
 
   // グローバルナビゲーション
@@ -165,11 +174,17 @@
 }
 
 .bMain {
+  .headline {
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    background-color: rgba(#fddab4, 0.5);
+  }
+
   .plays-headline {
     display: block;
     max-width: 10rem;
     padding-inline-start: 1.25rem;
-    background: linear-gradient(transparent 70%, #e4ad71 0%);
+    background: linear-gradient(transparent 70%, #f8c48d 0%);
   }
 
   .plays-list {
@@ -183,6 +198,13 @@
 
     .plays-list-item {
       grid-column-end: span 3;
+      border: #cbced1 solid 1px;
+      border-radius: 0.3rem;
+      &:hover {
+        box-shadow:
+          0 1px 2px 0 rgba(60, 64, 67, 0.3),
+          0 1px 3px 1px rgba(60, 64, 67, 0.15);
+      }
 
       @include tablet {
         grid-column-end: span 6;
@@ -214,7 +236,73 @@
       }
     }
   }
+
+  .dots {
+    width: 100%;
+    height: 4rem;
+    background-image:
+      radial-gradient(circle, #ffcca4 0.6rem, transparent 0.6rem),
+      radial-gradient(circle, #ffcca4 0.6rem, transparent 0.6rem);
+    background-position: 0rem;
+    background-size: 3rem;
+  }
 }
 
-// .bFooter {
-// }
+.bFooter {
+  .footer-content {
+    width: 100%;
+
+    // 横並び
+    .footer-list {
+      display: flex;
+      justify-content: flex-end;
+
+      .footer-item {
+        width: 25%;
+        max-width: 9rem;
+        border-right: 1px solid #e4ad71;
+        &:nth-of-type(4) {
+          border-right: none;
+        }
+      }
+
+      .footer-link {
+        display: flex;
+        border-radius: 0.25rem;
+        padding-inline-start: 0.75rem;
+        padding-inline-end: 0.75rem;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0.3px;
+        min-height: 3rem;
+
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+    // スマホ用
+    @include phone {
+      .footer-list {
+        flex-direction: column;
+
+        .footer-item {
+          width: 12rem;
+          max-width: none;
+          border: none;
+        }
+
+        .footer-link {
+          justify-content: left;
+          border-end-end-radius: 6.25rem;
+          border-start-end-radius: 6.25rem;
+
+          &:hover {
+            background: #eee;
+          }
+        }
+      }
+    }
+  }
+}
