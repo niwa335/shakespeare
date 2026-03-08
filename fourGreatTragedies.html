@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html class="page" dir="ltr" lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -18,16 +18,24 @@
 
     <title>四大悲劇</title>
     <meta name="description" content="シェイクスピア あらすじ 登場人物" />
+    <link rel="icon" type="image/png" href="/img/icon/favicon.png">
+    <link rel="apple-touch-icon" sizes="200x200" href="/img/icon/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/common.css?ver=20260307">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script async src="js/header-footer.js"></script>
+    <script type="module" src="js/common.js"></script>
 </head>
 
-<body>
-    <header></header>
+<body class="body">
+    <header class="bHeader-area">
+        <header-area />
+    </header>
     <main>
         <ul class="menu-content">
-          <li><a href="#hamlet">ハムレット</a></li>
-          <li><a href="#kingLear">リア王</a></li>
-          <li><a href="#othello">オセロー</a></li>
-          <li><a href="#macbeth">マクベス</a></li>
+            <li><a href="#hamlet">ハムレット</a></li>
+            <li><a href="#kingLear">リア王</a></li>
+            <li><a href="#othello">オセロー</a></li>
+            <li><a href="#macbeth">マクベス</a></li>
         </ul>
         <section>
             <div id="hamlet"></div>
@@ -46,7 +54,9 @@
             <h2>マクベス</h2>
         </section>
     </main>
-    <footer></footer>
+    <footer class="bFooter-area">
+        <footer-area />
+    </footer>
 </body>
 
 </html>

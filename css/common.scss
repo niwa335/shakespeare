@@ -75,9 +75,11 @@
     // スマホ用
     .gnav-showing {
       position: fixed;
-      height: calc(100% - 12.5rem);
+      height: calc(100% - 12rem);
       width: calc(100% - 5rem);
       max-width: 18rem;
+      min-width: 10rem;
+      min-height: 25rem;
       top: 0;
       right: 0;
       transition: right 0.5s;
@@ -126,8 +128,7 @@
       align-items: center;
       display: flex;
       flex-direction: row;
-      height: 4rem;
-      min-height: 4rem;
+      min-height: 5rem;
       position: relative;
       width: 100%;
 
@@ -151,6 +152,7 @@
         &:hover {
           background: #eee;
           border: #616662 solid 2px;
+          cursor: pointer;
         }
       }
     }
@@ -314,7 +316,8 @@
           justify-content: left;
           border-end-end-radius: 6.25rem;
           border-start-end-radius: 6.25rem;
-          padding-inline-start: 2rem;
+          padding-inline-start: 1rem;
+          border-left: 1rem solid #e4ad71;
 
           &:hover {
             background: #eee;
