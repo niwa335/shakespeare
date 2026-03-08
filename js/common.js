@@ -20,7 +20,7 @@ function handleScroll() {
   } else {
     // 下にスクロールしたとき
     // Gナビが表示されているときはスクロールしてもヘッダーバーを消さない
-    if (window.scrollY > 64) {
+    if (window.scrollY > 64 && headerBar != null) {
       headerBar.classList.add("hide");
       headerBar.classList.remove("shadow");
     }
@@ -35,7 +35,9 @@ function gnavShowing() {
   page.classList.add("no-scroll");
   body.classList.add("no-scroll");
 
-  navClose.addEventListener("click", gnavclosing);
+  if (navClose != null) {
+    navClose.addEventListener("click", gnavclosing);
+  }
 }
 
 function gnavclosing() {
@@ -51,14 +53,3 @@ const initNav = function () {
   gnavclosing();
 };
 mql.addEventListener("change", initNav);
-
-// vue試し
-Vue.component("footer-template", {
-  template: `
-       &copy;2026 シェイクスピアめも
-    `,
-});
-
-new Vue({
-  el: "#copyright",
-});
