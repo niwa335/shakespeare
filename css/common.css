@@ -31,6 +31,8 @@ a {
 
 img {
   border: none;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 button {
@@ -194,9 +196,11 @@ div {
   }
 }
 .bMain .headline {
+  margin: 0 1rem;
   padding-inline-start: 0.5rem;
   padding-inline-end: 0.5rem;
   background-color: rgba(253, 218, 180, 0.5);
+  border-radius: 1rem;
 }
 .bMain .plays-headline {
   display: block;
@@ -208,6 +212,7 @@ div {
   display: grid;
   grid-gap: 1rem 1rem;
   grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
+  padding: 0 1rem;
 }
 @media (max-width: 750px) {
   .bMain .plays-list {
@@ -234,21 +239,31 @@ div {
 }
 .bMain .plays-list .plays-list-item .plays-list-item-inner {
   display: flex;
-  width: 100%;
-  height: 100%;
-  min-height: 94px;
-  position: relative;
-  align-items: center;
+  max-height: 15rem;
+  min-height: 5rem;
 }
-.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-media-container {
-  display: flex;
+.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-media {
+  flex-shrink: 0;
+  max-width: 40%;
+}
+.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-media img {
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 .bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary {
-  padding-inline: 1rem;
+  padding: 0.5rem;
 }
 .bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary .plays-summary-title {
   display: inline;
   border-bottom: 3px solid #e4ad71;
+}
+.bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary .plays-summary-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 .bMain .dots {
   width: 100%;
@@ -265,10 +280,10 @@ div {
 .bFooter .footer-content .footer-list {
   display: flex;
   justify-content: flex-end;
+  padding-right: 1rem;
 }
 .bFooter .footer-content .footer-list .footer-item {
-  width: 25%;
-  max-width: 9rem;
+  width: auto;
   border-right: 1px solid #e4ad71;
 }
 .bFooter .footer-content .footer-list .footer-item:nth-of-type(4) {
@@ -277,11 +292,8 @@ div {
 .bFooter .footer-content .footer-list .footer-link {
   display: flex;
   border-radius: 0.25rem;
-  padding-inline-start: 0.75rem;
-  padding-inline-end: 0.75rem;
-  width: auto;
   align-items: center;
-  justify-content: center;
+  padding-inline: 1rem;
   letter-spacing: 0.3px;
   min-height: 3rem;
 }
@@ -301,6 +313,7 @@ div {
     justify-content: left;
     border-end-end-radius: 6.25rem;
     border-start-end-radius: 6.25rem;
+    padding-inline-start: 2rem;
   }
   .bFooter .footer-content .footer-list .footer-link:hover {
     background: #eee;

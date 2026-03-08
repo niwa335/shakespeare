@@ -51,3 +51,14 @@ const initNav = function () {
   gnavclosing();
 };
 mql.addEventListener("change", initNav);
+
+// vue試し
+Vue.component("footer-template", {
+  template: `
+       &copy;2026 シェイクスピアめも
+    `,
+});
+
+new Vue({
+  el: "#copyright",
+});

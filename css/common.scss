@@ -178,9 +178,11 @@
 
 .bMain {
   .headline {
+    margin: 0 1rem;
     padding-inline-start: 0.5rem;
     padding-inline-end: 0.5rem;
     background-color: rgba(#fddab4, 0.5);
+    border-radius: 1rem;
   }
 
   .plays-headline {
@@ -194,6 +196,7 @@
     display: grid;
     grid-gap: 1rem 1rem;
     grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
+    padding: 0 1rem;
 
     @include phone {
       grid-template-columns: repeat(4, minmax(0.5rem, 1fr));
@@ -203,6 +206,7 @@
       grid-column-end: span 3;
       border: #cbced1 solid 1px;
       border-radius: 0.3rem;
+
       &:hover {
         box-shadow:
           0 1px 2px 0 rgba(60, 64, 67, 0.3),
@@ -219,21 +223,33 @@
 
       .plays-list-item-inner {
         display: flex;
-        width: 100%;
-        height: 100%;
-        min-height: 94px;
-        position: relative;
-        align-items: center;
+        max-height: 15rem;
+        min-height: 5rem;
 
-        .plays-media-container {
-          display: flex;
+        .plays-media {
+          flex-shrink: 0;
+          max-width: 40%;
+          img {
+            height: 100%;
+            display: block;
+            object-fit: cover;
+          }
         }
+
         .plays-summary {
-          padding-inline: 1rem;
+          padding: 0.5rem;
 
           .plays-summary-title {
             display: inline;
             border-bottom: 3px solid #e4ad71;
+          }
+
+          .plays-summary-content {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            line-clamp: 3;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
           }
         }
       }
@@ -260,10 +276,10 @@
     .footer-list {
       display: flex;
       justify-content: flex-end;
+      padding-right: 1rem;
 
       .footer-item {
-        width: 25%;
-        max-width: 9rem;
+        width: auto;
         border-right: 1px solid #e4ad71;
         &:nth-of-type(4) {
           border-right: none;
@@ -273,11 +289,8 @@
       .footer-link {
         display: flex;
         border-radius: 0.25rem;
-        padding-inline-start: 0.75rem;
-        padding-inline-end: 0.75rem;
-        width: auto;
         align-items: center;
-        justify-content: center;
+        padding-inline: 1rem;
         letter-spacing: 0.3px;
         min-height: 3rem;
 
@@ -301,6 +314,7 @@
           justify-content: left;
           border-end-end-radius: 6.25rem;
           border-start-end-radius: 6.25rem;
+          padding-inline-start: 2rem;
 
           &:hover {
             background: #eee;
