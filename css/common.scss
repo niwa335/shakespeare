@@ -330,68 +330,68 @@
       }
     }
   }
+}
 
-  .bFooter {
-    .footer-content {
-      width: 100%;
-      padding-bottom: 2rem;
+.bFooter {
+  .footer-content {
+    width: 100%;
+    padding-bottom: 2rem;
 
-      // 横並び
-      .footer-list {
+    // 横並び
+    .footer-list {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1rem;
+
+      .footer-item {
+        width: auto;
+        border-right: 1px solid #{$color4};
+        &:nth-of-type(4) {
+          border-right: none;
+        }
+      }
+
+      .footer-link {
         display: flex;
-        justify-content: flex-end;
-        padding-right: 1rem;
+        border-radius: 0.25rem;
+        align-items: center;
+        padding-inline: 1rem;
+        letter-spacing: 0.3px;
+        min-height: 3rem;
+
+        &:hover {
+          background: #{$color3};
+        }
+      }
+    }
+    // スマホ用
+    @include phone {
+      .footer-list {
+        flex-direction: column;
 
         .footer-item {
-          width: auto;
-          border-right: 1px solid #{$color4};
-          &:nth-of-type(4) {
-            border-right: none;
-          }
+          width: calc(100% - 1rem);
+          max-width: none;
+          border: none;
         }
 
         .footer-link {
-          display: flex;
-          border-radius: 0.25rem;
-          align-items: center;
-          padding-inline: 1rem;
-          letter-spacing: 0.3px;
-          min-height: 3rem;
+          justify-content: left;
+          border-end-end-radius: 6.25rem;
+          border-start-end-radius: 6.25rem;
+          padding-inline-start: 1rem;
+          border-left: 1rem solid #{$color4};
 
           &:hover {
             background: #{$color3};
           }
         }
       }
-      // スマホ用
-      @include phone {
-        .footer-list {
-          flex-direction: column;
-
-          .footer-item {
-            width: calc(100% - 1rem);
-            max-width: none;
-            border: none;
-          }
-
-          .footer-link {
-            justify-content: left;
-            border-end-end-radius: 6.25rem;
-            border-start-end-radius: 6.25rem;
-            padding-inline-start: 1rem;
-            border-left: 1rem solid #{$color4};
-
-            &:hover {
-              background: #{$color3};
-            }
-          }
-        }
-      }
     }
-    .copyright {
-      display: block;
-      text-align: center;
-      padding-bottom: 2rem;
-    }
+  }
+  .copyright {
+    display: block;
+    text-align: center;
+    padding-bottom: 2rem;
   }
 }
