@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html class="page" dir="ltr" lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -9,20 +9,39 @@
     <meta property="og:site_name" content="シェイクスピアめも">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://niwa335.github.io/shakespeare/">
-    <meta property="og:image" content="https://niwa335.github.io/shakespeare/img/ogp.jpg" width="1200">
-    <meta property="og:title" content="シェイクスピア あらすじ 登場人物">
+    <meta property="og:url" content="https://niwa335.github.io/shakespeare">
+    <meta property="og:image" content="img/ogp.jpg" width="1200">
+    <meta property="og:title" content="シェイクスピア 簡単 あらすじ 登場人物">
     <meta property="og:description" content="シェイクスピア作品のあらすじや登場人物の備忘録サイトです。">
 
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>その他の悲劇</title>
+    <link rel="icon" type="image/png" href="img/icon/favicon.png">
+    <link rel="apple-touch-icon" sizes="200x200" href="img/icon/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script type="module" src="js/header-footer.js"></script>
+    <script type="module" src="js/gnavi.js"></script>
+
+    <title>シェイクスピアめも:その他の悲劇</title>
     <meta name="description" content="シェイクスピア あらすじ 登場人物" />
 </head>
 
-<body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+<body class="body">
+    <header class="bHeader-area">
+        <header-area />
+    </header>
+    <main class="bMain">
+        <ul class="plays-menu-list">
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#hamlet">ハムレット</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#kingLear">リア王</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#othello">オセロー</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#macbeth">マクベス</a></li>
+        </ul>
+    </main>
+    <footer class="bFooter-area">
+        <footer-area />
+    </footer>
 </body>
+
 </html>

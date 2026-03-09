@@ -1,44 +1,47 @@
-<html>
-<style>
-    .test {
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+<!DOCTYPE html>
+<html class="page" dir="ltr" lang="ja">
 
-    .test .menu-btn {
-        display: inline-block;
-        position: relative;
-        width: 30px;
-        height: 8px;
-        background-color: #161616;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+    <meta name="format-detection" content="telephone=no">
 
-    .test .menu-btn:before,
-    .test .menu-btn:after {
-        width: 30px;
-        height: 8px;
-        background-color: #161616;
-        content: "";
-        position: absolute;
-    }
+    <meta property="og:site_name" content="シェイクスピアめも">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://niwa335.github.io/shakespeare">
+    <meta property="og:image" content="img/ogp.jpg" width="1200">
+    <meta property="og:title" content="シェイクスピア 簡単 あらすじ 登場人物">
+    <meta property="og:description" content="シェイクスピア作品のあらすじや登場人物の備忘録サイトです。">
 
-    /* before を少し上にずらして描画 */
-    .test .menu-btn:before {
-        top: 10px;
-    }
+    <meta name="twitter:card" content="summary_large_image">
 
-    /* after を少し下にずらして描画 */
-    .test .menu-btn:after {
-        bottom: 10px;
-    }
-</style>
+    <link rel="icon" type="image/png" href="img/icon/favicon.png">
+    <link rel="apple-touch-icon" sizes="200x200" href="img/icon/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script type="module" src="js/header-footer.js"></script>
+    <script type="module" src="js/gnavi.js"></script>
 
-<div class="test">
-    <div class="menu-btn">
-    </div>
-</div>
+    <title>シェイクスピアめも:ロマンス劇</title>
+    <meta name="description" content="シェイクスピア あらすじ 登場人物" />
+</head>
 
-</html>
+<body class="body">
+    <header class="bHeader-area">
+        <header-area />
+    </header>
+    <main class="bMain">
+        <ul class="plays-menu-list">
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#hamlet">ハムレット</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#kingLear">リア王</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#othello">オセロー</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#macbeth">マクベス</a></li>
+        </ul>
+    </main>
+    <footer class="bFooter-area">
+        <footer-area />
+    </footer>
+</body>
+
+</html>s

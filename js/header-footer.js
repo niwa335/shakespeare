@@ -12,7 +12,7 @@ Vue.createApp({})
       <!--スマホ用-->
       <div class="gnav-hamburger">
         <div class="logo">
-          <a class="logo-link" href="/">
+          <a class="logo-link" href="https://niwa335.github.io/shakespeare">
             <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
           </a>
         </div>
