@@ -1,9 +1,14 @@
 @use "sass:math";
 
-// 変数
-// size
+// サイズ
 $phoneWidth: 750;
 $tabWidth: 1250;
+
+// 色
+$color1: #d7d56f;
+$color2: #b6d149;
+$color3: #9eb639;
+$color4: #78420e;
 
 @mixin phone {
   @media (max-width: #{$phoneWidth}px) {
@@ -30,7 +35,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.1px;
-  color: #333;
+  color: #382e43;
 }
 
 h1,

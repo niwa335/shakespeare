@@ -12,7 +12,7 @@ Vue.createApp({})
       <!--スマホ用-->
       <div class="gnav-hamburger">
         <div class="logo">
-          <a class="logo-link" href="https://niwa335.github.io/shakespeare/">
+          <a class="logo-link" href="/">
             <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
           </a>
         </div>
@@ -23,7 +23,7 @@ Vue.createApp({})
       <!--共通ナビゲーション-->
       <div class="gnav">
         <div class="logo">
-          <a class="logo-link" href="https://niwa335.github.io/shakespeare/">
+          <a class="logo-link" href="/">
             <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
           </a>
         </div>
@@ -75,4 +75,4 @@ Vue.createApp({})
 //     const message = ref("てすと");
 //     return { message };
 //   },
-// }).mount("#copyright");
+// }).mount("#test");
