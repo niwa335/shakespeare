@@ -16,9 +16,11 @@ Vue.createApp({})
             <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
           </a>
         </div>
-        <button class="hamburger-btn" aria-haspopup="true">
-          <img src="img/hamburger-bt.png" alt="MENU">
-        </button>
+        <div class="gnav-hamburger">
+            <button class="hamburger-btn" aria-haspopup="true">
+                <div class="hamburger-icon"/>
+            </button>
+        </div>
       </div>
       <!--共通ナビゲーション-->
       <div class="gnav">

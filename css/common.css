@@ -108,6 +108,55 @@ div {
     visibility: hidden;
   }
 }
+.bHeader .gnav-hamburger {
+  display: none;
+}
+@media (max-width: 750px) {
+  .bHeader .gnav-hamburger {
+    align-items: center;
+    display: flex;
+    min-height: 5rem;
+  }
+  .bHeader .gnav-hamburger .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .bHeader .gnav-hamburger .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 0.3rem;
+  }
+  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon {
+    display: flex;
+    width: 25px;
+    height: 3px;
+    background-color: #78420e;
+  }
+  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::before, .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #78420e;
+  }
+  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::before {
+    top: 13px;
+  }
+  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::after {
+    bottom: 13px;
+  }
+  .bHeader .gnav-hamburger .hamburger-btn:hover {
+    background: #9eb639;
+    cursor: pointer;
+  }
+}
 @media (max-width: 750px) {
   .bHeader .gnav-showing {
     position: fixed;
@@ -118,7 +167,7 @@ div {
     min-height: 25rem;
     top: 0;
     right: 0;
-    transition: right 0.5s;
+    transition: right 0.8s;
     background: #d7d56f;
     z-index: 820;
     visibility: visible;
@@ -150,40 +199,6 @@ div {
     background: #9eb639;
   }
 }
-.bHeader .gnav-hamburger {
-  display: none;
-}
-@media (max-width: 750px) {
-  .bHeader .gnav-hamburger {
-    align-content: flex-start;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    min-height: 5rem;
-    position: relative;
-    width: 100%;
-  }
-  .bHeader .gnav-hamburger .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-  .bHeader .gnav-hamburger .hamburger-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 0.25rem;
-  }
-  .bHeader .gnav-hamburger .hamburger-btn:hover {
-    background: #9eb639;
-    cursor: pointer;
-  }
-}
 
 @media (max-width: 750px) {
   .no-scroll {
@@ -197,7 +212,7 @@ div {
     position: fixed;
     top: 0;
     bottom: 0;
-    transition: all 0.6s;
+    transition: all 0.2s;
     z-index: 810;
   }
 }
