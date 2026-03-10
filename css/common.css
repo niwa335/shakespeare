@@ -53,7 +53,7 @@ div {
 }
 
 .bHeader {
-  position: static;
+  position: sticky;
   transition: 0.5s;
 }
 .bHeader.hide {

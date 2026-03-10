@@ -4,7 +4,6 @@ const body = document.querySelector(".body");
 const hamBtn = document.querySelector(".hamburger-btn");
 const nav = document.querySelector(".gnav");
 const navClose = document.querySelector(".gnav-close");
-// scroll判定
 let pos = 0;
 
 // グローバルナビゲーションの表示と非表示
@@ -29,42 +28,21 @@ width.addEventListener("change", gnavclosing);
 
 // ナビ追従
 function handleScroll() {
-  // // ページ最下部判定
-  // let bodyHeight = document.body.clientHeight; // bodyの高さ
-  // let windowHeight = window.innerHeight; // windowの高さ
-  // let bottomPoint = Math.floor(bodyHeight - windowHeight);
+  // 上にスクロールしたとき
+  if (window.scrollY < pos) {
+    headerBar.classList.remove("hide");
 
-  if (pos != 0) {
-    // 上にスクロールしたとき
-    // ページ底ではGナビ出さない
-    // if (window.scrollY < pos && bottomPoint > pos + 100) {
-    if (window.scrollY < pos) {
-      headerBar.classList.remove("hide");
-
-      // トップ判定（0にならない誤差対策でひとまず2）
-      if (window.scrollY > 2) {
-        headerBar.classList.add("shadow");
-      } else {
-        headerBar.classList.remove("shadow");
-      }
-    } else if (window.scrollY > 64) {
-      // 下にスクロールした時（トップ付近ではヘッダーを隠さない）
-      headerBar.classList.add("hide");
+    // トップ判定（0にならない誤差対策でひとまず2）
+    if (window.scrollY > 2) {
+      headerBar.classList.add("shadow");
+    } else {
       headerBar.classList.remove("shadow");
     }
+  } else if (window.scrollY > pos && window.scrollY > 64) {
+    // 下にスクロールした時（トップ付近ではヘッダーを隠さない）
+    headerBar.classList.add("hide");
+    headerBar.classList.remove("shadow");
   }
   pos = window.scrollY;
-  // pos = Math.floor(window.scrollY);
 }
-
 window.addEventListener("scroll", handleScroll);
-
-// function debounce(func, delay) {
-//   let timer;
-//   return function (...args) {
-//     clearTimeout(timer);
-//     timer = setTimeout(() => func.apply(this, args), delay);
-//   };
-// }
-
-// window.addEventListener("scroll", debounce(handleScroll, 100));

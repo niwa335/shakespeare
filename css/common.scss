@@ -5,7 +5,7 @@
 }
 
 .bHeader {
-  position: static;
+  position: sticky;
   transition: 0.5s;
 
   &.hide {
