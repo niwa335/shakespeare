@@ -497,10 +497,7 @@
 
       .footer-item {
         width: auto;
-        border-right: 1px solid #{$color4};
-        &:nth-of-type(4) {
-          border-right: none;
-        }
+        border-left: 1px solid #{$color4};
       }
 
       .footer-link {
@@ -546,4 +543,12 @@
     text-align: center;
     padding-bottom: 2rem;
   }
+}
+
+.about-us-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
 }

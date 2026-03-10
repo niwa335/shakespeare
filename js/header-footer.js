@@ -57,10 +57,8 @@ Vue.createApp({})
     <div class="bFooter">
       <nav class="footer-content">
         <ul class="footer-list">
-          <li class="footer-item"><a class="footer-link" href="aboutUs.html#aboutUsage">ご利用について</a></li>
-          <li class="footer-item"><a class="footer-link" href="aboutUs.html#aboutLink">リンクについて</a></li>
+          <li class="footer-item"><a class="footer-link" href="aboutUs.html">このサイトについて</a></li>
           <li class="footer-item"><a class="footer-link" href="aboutUs.html#disclaimerPrecautions">免責・注意事項</a></li>
-          <li class="footer-item"><a class="footer-link" href="aboutUs.html#management">運営</a></li>
         </ul>
       </nav>
       <div class="copyright">

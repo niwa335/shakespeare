@@ -470,10 +470,7 @@ div {
 }
 .bFooter .footer-content .footer-list .footer-item {
   width: auto;
-  border-right: 1px solid #78420e;
-}
-.bFooter .footer-content .footer-list .footer-item:nth-of-type(4) {
-  border-right: none;
+  border-left: 1px solid #78420e;
 }
 .bFooter .footer-content .footer-list .footer-link {
   display: flex;
@@ -509,5 +506,13 @@ div {
 .bFooter .copyright {
   display: block;
   text-align: center;
+  padding-bottom: 2rem;
+}
+
+.about-us-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-bottom: 2rem;
 }/*# sourceMappingURL=common.css.map */
