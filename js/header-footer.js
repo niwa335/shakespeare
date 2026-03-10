@@ -12,7 +12,7 @@ Vue.createApp({})
       <!--スマホ用-->
       <div class="gnav-hamburger">
         <div class="logo">
-          <a class="logo-link" href="https://niwa335.github.io/shakespeare">
+          <a class="logo-link" href="index.html">
             <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
           </a>
         </div>
@@ -25,7 +25,7 @@ Vue.createApp({})
       <!--共通ナビゲーション-->
       <div class="gnav">
         <div class="logo">
-          <a class="logo-link" href="https://niwa335.github.io/shakespeare">
+          <a class="logo-link" href="index.html">
             <img src="img/title.png" alt="シェイクスピアめも" width="171" height="63">
           </a>
         </div>
@@ -57,10 +57,10 @@ Vue.createApp({})
     <div class="bFooter">
       <nav class="footer-content">
         <ul class="footer-list">
-          <li class="footer-item"><a class="footer-link" href="aboutUsage.html#aboutUsage">ご利用について</a></li>
-          <li class="footer-item"><a class="footer-link" href="aboutUsage.html#aboutLink">リンクについて</a></li>
-          <li class="footer-item"><a class="footer-link" href="aboutUsage.html#disclaimerPrecautions">免責・注意事項</a></li>
-          <li class="footer-item"><a class="footer-link" href="aboutUsage.html#management">運営</a></li>
+          <li class="footer-item"><a class="footer-link" href="aboutUs.html#aboutUsage">ご利用について</a></li>
+          <li class="footer-item"><a class="footer-link" href="aboutUs.html#aboutLink">リンクについて</a></li>
+          <li class="footer-item"><a class="footer-link" href="aboutUs.html#disclaimerPrecautions">免責・注意事項</a></li>
+          <li class="footer-item"><a class="footer-link" href="aboutUs.html#management">運営</a></li>
         </ul>
       </nav>
       <div class="copyright">

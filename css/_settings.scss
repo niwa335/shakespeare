@@ -9,6 +9,7 @@ $color1: #d7d56f;
 $color2: #b6d149;
 $color3: #9eb639;
 $color4: #78420e;
+$color5: #382e43;
 
 @mixin phone {
   @media (max-width: #{$phoneWidth}px) {
@@ -35,10 +36,11 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.1px;
-  color: #382e43;
 }
 
 h1,
+h2,
+h3,
 ul,
 li,
 button {

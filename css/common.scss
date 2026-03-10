@@ -137,7 +137,7 @@
     // スマホ用グローバルナビゲーション
     .gnav-showing {
       position: fixed;
-      height: calc(100% - 12rem);
+      height: 15rem;
       width: calc(100% - 5rem);
       max-width: 18rem;
       min-width: 10rem;
@@ -206,14 +206,15 @@
 
 .bMain {
   .headline {
-    margin: 0 1rem 1rem 1rem;
+    margin: 0 1rem 2rem 1rem;
     padding-inline-start: 2rem;
     padding-inline-end: 0.5rem;
     background: linear-gradient(to bottom right, #{$color2}, #{$color3});
     border-radius: 1rem;
+    color: #{$color5};
   }
 
-  .plays-headline {
+  .box-type1 {
     display: inline-block;
     position: relative;
     margin-left: 0.5em;
@@ -239,15 +240,21 @@
     }
   }
 
+  .box-type2 {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #{$color5};
+    background: #{$color2};
+    border-left: double 8px #{$color4};
+    border-right: double 8px #{$color4};
+  }
+
   .plays-list {
     display: grid;
     grid-gap: 1rem 1rem;
     grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
     padding: 0 1rem;
-
-    @include phone {
-      grid-template-columns: repeat(4, minmax(0.5rem, 1fr));
-    }
+    margin: 2rem 0;
 
     .plays-list-item {
       grid-column-end: span 3;
@@ -264,7 +271,7 @@
       }
 
       @include phone {
-        grid-column-end: span 4;
+        grid-column-end: span 12;
       }
 
       .plays-list-item-inner {
@@ -310,9 +317,21 @@
   }
 
   .dots {
-    width: 100%;
     height: 1rem;
     margin: 2rem 0 1rem 0;
+
+    background-image:
+      linear-gradient(90deg, #{$color2} 30%, transparent 30%),
+      linear-gradient(90deg, #{$color3} 30%, transparent 30%);
+    background-size: 3rem, 3rem;
+    background-position:
+      1.5rem 0,
+      0 0;
+  }
+
+  .dash {
+    height: 0.2rem;
+    margin: 2rem 0;
 
     background-image:
       linear-gradient(90deg, #{$color2} 30%, transparent 30%),
@@ -327,6 +346,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap;
 
     .plays-menu-list-item {
       display: flex;
@@ -349,6 +369,117 @@
           transform: rotate(45deg);
         }
       }
+      &::after {
+        display: inline-block;
+        background: #{$color3};
+        content: ""; /* 要素に内容を追加 */
+        height: 2px; /* 下線の高さ */
+        position: absolute; /* 絶対位置指定 */
+        transform: scale(
+          0,
+          1
+        ); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
+        transition: transform 0.3s; /* 変形をアニメーション化 */
+        width: 100%; /* 要素の幅 */
+      }
+      &:hover {
+        transform: scale(1, 1);
+        background: #{$color3};
+      }
+    }
+  }
+
+  .plays-detail {
+    display: grid;
+    grid-gap: 1rem 1rem;
+    grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
+    padding: 0 1rem;
+
+    .plays-detail-left {
+      grid-column-end: span 3;
+      justify-items: center;
+
+      @include tablet {
+        grid-column-end: span 4;
+      }
+
+      @include phone {
+        grid-column-end: span 12;
+      }
+
+      .plays-detail-title {
+        padding: 0.5rem 1rem;
+        color: #{$color5};
+        background: #{$color2};
+        border-left: double 8px #{$color4};
+        border-right: double 8px #{$color4};
+      }
+
+      .plays-detail-media {
+        margin: 2rem 0;
+      }
+    }
+
+    .plays-detail-center {
+      grid-column-end: span 3;
+      position: relative;
+      margin: 2rem 1rem 0 2rem;
+      padding: 2em 1.5rem 1rem 1.5rem;
+      border: solid 3px #{$color4};
+      border-radius: 8px;
+
+      @include tablet {
+        grid-column-end: span 8;
+      }
+
+      @include phone {
+        grid-column-end: span 12;
+      }
+
+      .plays-detail-center-content {
+        position: absolute;
+        top: -1.25rem;
+        left: -3rem;
+        padding: 0 9px;
+        background: #{$color1};
+      }
+    }
+
+    .plays-detail-right {
+      grid-column-end: span 6;
+      position: relative;
+      margin: 2rem 1rem 0 2rem;
+      padding: 2em 1.5rem 1rem 1.5rem;
+      border: solid 3px #{$color4};
+      border-radius: 8px;
+
+      @include tablet {
+        grid-column-end: span 12;
+      }
+
+      @include phone {
+        grid-column-end: span 12;
+      }
+
+      .plays-detail-right-content {
+        position: absolute;
+        top: -1.25rem;
+        left: -3rem;
+        padding: 0 9px;
+        background: #{$color1};
+      }
+    }
+  }
+
+  .about-us {
+    margin: 1rem;
+
+    .about-us-content {
+      margin: 2rem 0;
+    }
+
+    .about-us-content-txt {
+      padding: 1rem;
     }
   }
 }
@@ -398,8 +529,8 @@
 
         .footer-link {
           justify-content: left;
-          border-end-end-radius: 6.25rem;
           border-start-end-radius: 6.25rem;
+          border-end-end-radius: 6.25rem;
           padding-inline-start: 1rem;
           border-left: 1rem solid #{$color4};
 
