@@ -4,6 +4,7 @@ const body = document.querySelector(".body");
 const hamBtn = document.querySelector(".hamburger-btn");
 const nav = document.querySelector(".gnav");
 const navClose = document.querySelector(".gnav-close");
+const width = window.matchMedia("(max-width: 750px)");
 let pos = 0;
 
 // グローバルナビゲーションの表示と非表示
@@ -23,7 +24,6 @@ function gnavclosing() {
 hamBtn.addEventListener("click", gnavShowing);
 
 // 画面幅が広くなったらナビを閉じる
-const width = window.matchMedia("(max-width: 750px)");
 width.addEventListener("change", gnavclosing);
 
 // ナビ追従
