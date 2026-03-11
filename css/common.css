@@ -52,153 +52,253 @@ div {
   background: #d7d56f;
 }
 
-.bHeader {
-  transition: 0.5s;
-}
-.bHeader.hide {
-  transform: translate3d(0, -140px, 0);
-}
-.bHeader.shadow {
-  position: fixed;
+.gnav {
+  display: block;
+  position: relative;
   width: 100%;
-  top: 0px;
+  height: 64px;
+  min-height: 64px;
   background: #d7d56f;
-  z-index: 2;
+  z-index: 100;
+}
+.gnav.shadow {
+  position: fixed;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  top: 0px;
+  bottom: 0;
+  z-index: 810;
 }
-.bHeader .gnav {
+.gnav.hide {
+  position: fixed;
+  transform: translate3d(0, -140px, 0);
+  transition: transform 0.4s ease, background 0.3s ease, box-shadow 0.3s ease;
+  top: 0px;
+  bottom: 0;
+  z-index: 810;
+}
+.gnav .gnav-inner {
   display: flex;
-  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100%;
+}
+.gnav .gnav-inner .logo {
+  position: relative;
+  flex-direction: column;
   align-items: center;
-}
-.bHeader .gnav .logo-link {
-  display: flex;
-}
-.bHeader .gnav .gnav-content {
-  width: 100%;
-  align-items: center;
-}
-.bHeader .gnav .gnav-content .gnav-list {
-  display: flex;
-}
-.bHeader .gnav .gnav-content .gnav-list .gnav-item {
-  width: 20%;
-  max-width: 7.5rem;
-  border-right: 1px solid #78420e;
-}
-.bHeader .gnav .gnav-content .gnav-list .gnav-item:nth-of-type(5) {
-  border-right: none;
-}
-.bHeader .gnav .gnav-content .gnav-list .gnav-link {
-  display: flex;
-  border-radius: 0.25rem;
-  padding-inline-start: 0.75rem;
-  padding-inline-end: 0.75rem;
   width: auto;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.3px;
-  min-height: 3rem;
 }
-.bHeader .gnav .gnav-content .gnav-list .gnav-link:hover {
-  background: #9eb639;
+.gnav .gnav-inner .logo .logo-link {
+  flex-direction: row;
+  border-start-end-radius: 100px;
+  border-end-end-radius: 100px;
+  overflow: hidden;
 }
-@media (max-width: 750px) {
-  .bHeader .gnav {
-    position: absolute;
-    visibility: hidden;
-  }
-}
-.bHeader .gnav-hamburger {
+.gnav .gnav-inner .gnav-mobile .logo-mobile {
   display: none;
 }
-@media (max-width: 750px) {
-  .bHeader .gnav-hamburger {
-    align-items: center;
-    display: flex;
-    min-height: 5rem;
+@media screen and (min-width: 751px) {
+  .gnav .gnav-inner {
+    position: static;
+    box-shadow: 0 0 0 0 transparent;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    transform: none;
+    visibility: visible;
   }
-  .bHeader .gnav-hamburger .logo {
-    display: flex;
+  .gnav .gnav-inner .gnav-content {
+    position: relative;
+    flex: auto;
+    align-items: flex-start;
+    display: initial;
     flex-direction: column;
-    align-items: center;
-    height: 100%;
+    transition: background 0.3s ease;
+    visibility: visible;
+    padding: 0;
   }
-  .bHeader .gnav-hamburger .hamburger-btn {
+  .gnav .gnav-inner .gnav-content .gnav-list {
+    display: flex;
+    flex-direction: row;
+    min-height: 64px;
+    align-items: center;
+  }
+  .gnav .gnav-inner .gnav-content .gnav-list .gnav-item {
+    width: 20%;
+    max-width: 7.5rem;
+    border-right: 1px solid #78420e;
+  }
+  .gnav .gnav-inner .gnav-content .gnav-list .gnav-item:nth-of-type(5) {
+    border-right: none;
+  }
+  .gnav .gnav-inner .gnav-content .gnav-list .gnav-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: auto;
+    min-height: 3rem;
+    letter-spacing: 0.3px;
+    border-radius: 0.4rem;
+  }
+  .gnav .gnav-inner .gnav-content .gnav-list .gnav-link:hover {
+    background: #9eb639;
+  }
+}
+@media (max-width: 750px) {
+  .gnav .gnav-inner {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    box-shadow: 0 0 0 0 transparent;
+    background: #d7d56f;
+    width: 100%;
+  }
+  .gnav .gnav-inner .gnav-mobile {
+    display: flex;
     position: absolute;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    transition: background 0.3s ease;
+  }
+  .gnav .gnav-inner .gnav-mobile .logo-mobile {
+    display: flex;
+  }
+  .gnav .gnav-inner .gnav-mobile .hamburger-btn {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
     right: 0.5rem;
     width: 48px;
     height: 48px;
     border-radius: 0.3rem;
   }
-  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon {
+  .gnav .gnav-inner .gnav-mobile .hamburger-btn .hamburger-icon {
     display: flex;
     width: 25px;
     height: 3px;
     background-color: #78420e;
   }
-  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::before, .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::after {
+  .gnav .gnav-inner .gnav-mobile .hamburger-btn .hamburger-icon::before, .gnav .gnav-inner .gnav-mobile .hamburger-btn .hamburger-icon::after {
     content: "";
     position: absolute;
     width: 25px;
     height: 3px;
     background-color: #78420e;
   }
-  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::before {
+  .gnav .gnav-inner .gnav-mobile .hamburger-btn .hamburger-icon::before {
     top: 13px;
   }
-  .bHeader .gnav-hamburger .hamburger-btn .hamburger-icon::after {
+  .gnav .gnav-inner .gnav-mobile .hamburger-btn .hamburger-icon::after {
     bottom: 13px;
   }
-  .bHeader .gnav-hamburger .hamburger-btn:hover {
+  .gnav .gnav-inner .gnav-mobile .hamburger-btn:hover {
     background: #9eb639;
     cursor: pointer;
   }
 }
-@media (max-width: 750px) {
-  .bHeader .gnav-showing {
-    position: fixed;
-    height: 15rem;
-    width: calc(100% - 5rem);
-    max-width: 18rem;
-    min-width: 10rem;
-    min-height: 25rem;
-    top: 0;
-    right: 0;
-    transition: right 0.8s;
-    background: #d7d56f;
-    z-index: 820;
-    visibility: visible;
-    border-radius: 0.25rem;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-  }
-  .bHeader .gnav-showing .logo {
-    padding: 0.5rem 1rem;
-  }
-  .bHeader .gnav-showing .gnav-list {
-    flex-direction: column;
-  }
-  .bHeader .gnav-showing .gnav-item {
-    width: calc(100% - 0.5rem);
-  }
-  .bHeader .gnav-showing .gnav-link {
-    display: flex;
-    height: 100%;
-    border-end-end-radius: 6.25rem;
-    border-start-end-radius: 6.25rem;
-    padding-inline-start: 0.5rem;
-    padding-inline-end: 0.75rem;
-    align-items: center;
-    letter-spacing: 0.3px;
-    min-height: 3rem;
-    border-left: 1rem solid #78420e;
-  }
-  .bHeader .gnav-showing .gnav-link:hover {
-    background: #9eb639;
-  }
+.gnav .gnav-inner .logo {
+  display: none;
+}
+.gnav .gnav-inner .logo.showing {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+}
+.gnav .gnav-inner .gnav-content {
+  display: none;
+}
+.gnav .gnav-inner .gnav-content.showing {
+  display: flex;
+  position: absolute;
+  top: 64px;
+  right: 103px;
+  z-index: 840;
+}
+.gnav .gnav-inner .gnav-content.showing .gnav-list {
+  right: 0;
+  flex-direction: column;
+}
+.gnav .gnav-inner .gnav-content.showing .gnav-list .gnav-item {
+  width: calc(100% - 0.5rem);
+}
+.gnav .gnav-inner .gnav-content.showing .gnav-list .gnav-item .gnav-link {
+  display: flex;
+  height: 100%;
+  border-end-end-radius: 6.25rem;
+  border-start-end-radius: 6.25rem;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.75rem;
+  align-items: center;
+  letter-spacing: 0.3px;
+  min-height: 3rem;
+  border-left: 1rem solid #78420e;
+}
+.gnav .gnav-inner .gnav-content.showing .gnav-list .gnav-item .gnav-link:hover {
+  background: #9eb639;
+}
+.gnav.showing {
+  display: block;
+  position: fixed;
+  height: 15rem;
+  width: 220px;
+  max-width: 18rem;
+  min-width: 10rem;
+  min-height: 25rem;
+  top: 0;
+  right: 0;
+  transition: right 0.8s;
+  background: #d7d56f;
+  visibility: visible;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  z-index: 830;
+}
+.gnav.showing .logo-mobile {
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+}
+.gnav.showing .gnav-inner .gnav-mobile .hamburger-btn {
+  display: none;
+}
+.gnav.showing .hamburger-btn-close {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.3rem;
+}
+.gnav.showing .hamburger-btn-close .hamburger-icon-close {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.gnav.showing .hamburger-btn-close .hamburger-icon-close::before, .gnav.showing .hamburger-btn-close .hamburger-icon-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px; /* 棒の幅（太さ） */
+  height: 30px; /* 棒の高さ */
+  background-color: #78420e;
+}
+.gnav.showing .hamburger-btn-close .hamburger-icon-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.gnav.showing .hamburger-btn-close .hamburger-icon-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.gnav.showing .hamburger-btn-close:hover {
+  background: #9eb639;
+  cursor: pointer;
 }
 
 @media (max-width: 750px) {
@@ -208,13 +308,13 @@ div {
     opacity: 1;
   }
   .no-scroll .gnav-close {
+    position: fixed;
     background: rgba(0, 0, 0, 0.8);
     width: 100%;
-    position: fixed;
     top: 0;
     bottom: 0;
     transition: all 0.2s;
-    z-index: 810;
+    z-index: 820;
   }
 }
 .bMain .headline {
@@ -249,6 +349,7 @@ div {
 }
 .bMain .box-type2 {
   display: inline-block;
+  position: unset;
   padding: 0.5rem 1rem;
   color: #382e43;
   background: #b6d149;
@@ -356,12 +457,12 @@ div {
 .bMain .plays-menu-list .plays-menu-list-item::after {
   display: inline-block;
   background: #9eb639;
-  content: ""; /* 要素に内容を追加 */
-  height: 2px; /* 下線の高さ */
-  position: absolute; /* 絶対位置指定 */
-  transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
-  transition: transform 0.3s; /* 変形をアニメーション化 */
-  width: 100%; /* 要素の幅 */
+  content: "";
+  height: 2px;
+  position: absolute;
+  transform: scale(0, 1);
+  transition: transform 0.3s;
+  width: 100%;
 }
 .bMain .plays-menu-list .plays-menu-list-item:hover {
   transform: scale(1, 1);

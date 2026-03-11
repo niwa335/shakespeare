@@ -11,6 +11,12 @@ $color3: #9eb639;
 $color4: #78420e;
 $color5: #382e43;
 
+@mixin notPhone {
+  @media screen and (min-width: #{$phoneWidth + 1}px) {
+    @content;
+  }
+}
+
 @mixin phone {
   @media (max-width: #{$phoneWidth}px) {
     @content;

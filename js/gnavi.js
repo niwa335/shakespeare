@@ -1,25 +1,35 @@
 const page = document.querySelector(".page");
-const headerBar = document.querySelector(".bHeader");
 const body = document.querySelector(".body");
-const hamBtn = document.querySelector(".hamburger-btn");
 const nav = document.querySelector(".gnav");
+// const navMobile = document.querySelector(".gnav-mobile");
+const logo = document.querySelector(".logo");
+const navCont = document.querySelector(".gnav-content");
+const hamBtn = document.querySelector(".hamburger-btn");
+const hamBtnClose = document.querySelector(".hamburger-btn-close");
 const navClose = document.querySelector(".gnav-close");
 const width = window.matchMedia("(max-width: 750px)");
 let pos = 0;
 
 // グローバルナビゲーションの表示と非表示
 function gnavShowing() {
-  nav.classList.replace("gnav", "gnav-showing");
   page.classList.add("no-scroll");
   body.classList.add("no-scroll");
 
+  nav.classList.add("showing");
+  logo.classList.add("showing");
+  navCont.classList.add("showing");
+
+  hamBtnClose.addEventListener("click", gnavclosing);
   navClose.addEventListener("click", gnavclosing);
 }
 
 function gnavclosing() {
-  nav.classList.replace("gnav-showing", "gnav");
   page.classList.remove("no-scroll");
   body.classList.remove("no-scroll");
+
+  nav.classList.remove("showing");
+  logo.classList.remove("showing");
+  navCont.classList.remove("showing");
 }
 hamBtn.addEventListener("click", gnavShowing);
 
@@ -30,18 +40,18 @@ width.addEventListener("change", gnavclosing);
 function handleScroll() {
   // 上にスクロールしたとき
   if (window.scrollY < pos) {
-    headerBar.classList.remove("hide");
+    nav.classList.remove("hide");
 
     // トップ判定（0にならない誤差対策でひとまず2）
     if (window.scrollY > 2) {
-      headerBar.classList.add("shadow");
+      nav.classList.add("shadow");
     } else {
-      headerBar.classList.remove("shadow");
+      nav.classList.remove("shadow");
     }
   } else if (window.scrollY > pos && window.scrollY > 64) {
     // 下にスクロールした時（トップ付近ではヘッダーを隠さない）
-    headerBar.classList.add("hide");
-    headerBar.classList.remove("shadow");
+    nav.classList.add("hide");
+    nav.classList.remove("shadow");
   }
   pos = window.scrollY;
 }

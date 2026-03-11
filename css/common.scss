@@ -4,181 +4,309 @@
   background: #{$color1};
 }
 
-.bHeader {
-  transition: 0.5s;
-
-  &.hide {
-    transform: translate3d(0, -140px, 0);
-  }
+// グローバルナビゲーション
+.gnav {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 64px;
+  min-height: 64px;
+  background: #{$color1};
+  z-index: 100;
 
   &.shadow {
     position: fixed;
-    width: 100%;
-    top: 0px;
-    background: #{$color1};
-    z-index: 2;
     box-shadow:
       0 1px 2px 0 rgba(60, 64, 67, 0.3),
       0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    top: 0px;
+    bottom: 0;
+    z-index: 810;
   }
 
-  // グローバルナビゲーション
-  .gnav {
-    display: flex;
-    width: 100%;
-    align-items: center;
+  &.hide {
+    position: fixed;
+    transform: translate3d(0, -140px, 0);
+    transition:
+      transform 0.4s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+    top: 0px;
+    bottom: 0;
+    z-index: 810;
+  }
 
-    .logo-link {
-      display: flex;
+  .gnav-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+
+    .logo {
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+
+      .logo-link {
+        flex-direction: row;
+        border-start-end-radius: 100px;
+        border-end-end-radius: 100px;
+        overflow: hidden;
+      }
     }
 
-    .gnav-content {
-      width: 100%;
-      align-items: center;
+    // 初期非表示
+    .gnav-mobile {
+      .logo-mobile {
+        display: none;
+      }
+    }
 
-      // 横並び
-      .gnav-list {
-        display: flex;
+    @include notPhone {
+      position: static;
+      box-shadow: 0 0 0 0 transparent;
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+      max-width: 100%;
+      transform: none;
+      visibility: visible;
 
-        .gnav-item {
-          width: 20%;
-          max-width: 7.5rem;
-          border-right: 1px solid #{$color4};
-          &:nth-of-type(5) {
-            border-right: none;
+      .gnav-content {
+        position: relative;
+        flex: auto;
+        align-items: flex-start;
+        display: initial;
+        flex-direction: column;
+        transition: background 0.3s ease;
+        visibility: visible;
+        padding: 0;
+
+        // 横並び
+        .gnav-list {
+          display: flex;
+          flex-direction: row;
+          min-height: 64px;
+          align-items: center;
+
+          .gnav-item {
+            width: 20%;
+            max-width: 7.5rem;
+            border-right: 1px solid #{$color4};
+            &:nth-of-type(5) {
+              border-right: none;
+            }
+          }
+
+          .gnav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            min-height: 3rem;
+            letter-spacing: 0.3px;
+            border-radius: 0.4rem;
+
+            &:hover {
+              background: #{$color3};
+            }
           }
         }
+      }
+    }
 
-        .gnav-link {
+    // スマホ画面
+    @include phone {
+      display: flex;
+      flex-direction: row;
+      position: static;
+      box-shadow: 0 0 0 0 transparent;
+      background: #{$color1};
+      width: 100%;
+
+      .gnav-mobile {
+        display: flex;
+        position: absolute;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        transition: background 0.3s ease;
+
+        .logo-mobile {
           display: flex;
-          border-radius: 0.25rem;
-          padding-inline-start: 0.75rem;
-          padding-inline-end: 0.75rem;
-          width: auto;
+        }
+
+        .hamburger-btn {
+          display: flex;
+          position: absolute;
           align-items: center;
           justify-content: center;
-          letter-spacing: 0.3px;
-          min-height: 3rem;
+          right: 0.5rem;
+          width: 48px;
+          height: 48px;
+          border-radius: 0.3rem;
 
-          &:hover {
-            background: #{$color3};
-          }
-        }
-      }
-    }
-
-    // すべて隠す
-    @include phone {
-      position: absolute;
-      visibility: hidden;
-    }
-  }
-
-  // スマホ用Ｇナビ
-  .gnav-hamburger {
-    display: none;
-
-    @include phone {
-      align-items: center;
-      display: flex;
-      min-height: 5rem;
-
-      .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-      }
-
-      .hamburger-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 0.5rem;
-        width: 48px;
-        height: 48px;
-        border-radius: 0.3rem;
-
-        .hamburger-icon {
-          display: flex;
-          width: 25px;
-          height: 3px;
-          background-color: #{$color4};
-
-          &::before,
-          &::after {
-            content: "";
-            position: absolute;
+          .hamburger-icon {
+            display: flex;
             width: 25px;
             height: 3px;
             background-color: #{$color4};
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              width: 25px;
+              height: 3px;
+              background-color: #{$color4};
+            }
+
+            &::before {
+              top: 13px;
+            }
+
+            &::after {
+              bottom: 13px;
+            }
           }
 
-          &::before {
-            top: 13px;
-          }
-
-          &::after {
-            bottom: 13px;
+          &:hover {
+            background: #{$color3};
+            cursor: pointer;
           }
         }
+      }
+    }
 
-        &:hover {
-          background: #{$color3};
-          cursor: pointer;
+    // スマホのGナビ画面内のロゴ
+    .logo {
+      display: none;
+
+      &.showing {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    // リストをもう一個作りたくなくて無理やり調整している……
+    .gnav-content {
+      display: none;
+
+      &.showing {
+        display: flex;
+        position: absolute;
+        top: 64px;
+        right: 103px; // ※合わせて！！※
+        z-index: 840;
+
+        .gnav-list {
+          right: 0;
+          flex-direction: column;
+
+          .gnav-item {
+            width: calc(100% - 0.5rem);
+
+            .gnav-link {
+              display: flex;
+              height: 100%;
+              border-end-end-radius: 6.25rem;
+              border-start-end-radius: 6.25rem;
+              padding-inline-start: 0.5rem;
+              padding-inline-end: 0.75rem;
+              align-items: center;
+              letter-spacing: 0.3px;
+              min-height: 3rem;
+              border-left: 1rem solid #{$color4};
+
+              &:hover {
+                background: #{$color3};
+              }
+            }
+          }
         }
       }
     }
   }
+  // スマホのGナビ画面表示
+  &.showing {
+    display: block;
+    position: fixed;
+    height: 15rem;
+    width: 220px; // ※合わせて！！※
+    max-width: 18rem;
+    min-width: 10rem;
+    min-height: 25rem;
+    top: 0;
+    right: 0;
+    transition: right 0.8s;
+    background: #{$color1};
+    visibility: visible;
+    border-radius: 0.25rem;
+    box-shadow:
+      0 1px 2px 0 rgba(60, 64, 67, 0.3),
+      0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    z-index: 830;
 
-  @include phone {
-    // スマホ用グローバルナビゲーション
-    .gnav-showing {
-      position: fixed;
-      height: 15rem;
-      width: calc(100% - 5rem);
-      max-width: 18rem;
-      min-width: 10rem;
-      min-height: 25rem;
-      top: 0;
-      right: 0;
-      transition: right 0.8s;
-      background: #{$color1};
-      z-index: 820;
-      visibility: visible;
-      border-radius: 0.25rem;
-      box-shadow:
-        0 1px 2px 0 rgba(60, 64, 67, 0.3),
-        0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    // 画面左端のロゴ
+    .logo-mobile {
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+      width: auto;
+    }
 
-      .logo {
-        padding: 0.5rem 1rem;
-      }
-
-      .gnav-list {
-        flex-direction: column;
-      }
-
-      .gnav-item {
-        width: calc(100% - 0.5rem);
-      }
-
-      .gnav-link {
-        display: flex;
-        height: 100%;
-        border-end-end-radius: 6.25rem;
-        border-start-end-radius: 6.25rem;
-        padding-inline-start: 0.5rem;
-        padding-inline-end: 0.75rem;
-        align-items: center;
-        letter-spacing: 0.3px;
-        min-height: 3rem;
-        border-left: 1rem solid #{$color4};
-
-        &:hover {
-          background: #{$color3};
+    .gnav-inner {
+      .gnav-mobile {
+        .hamburger-btn {
+          display: none;
         }
+      }
+    }
+
+    .hamburger-btn-close {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 0.3rem;
+
+      .hamburger-icon-close {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 5px; /* 棒の幅（太さ） */
+          height: 30px; /* 棒の高さ */
+          background-color: #{$color4};
+        }
+
+        &::before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+
+      &:hover {
+        background: #{$color3};
+        cursor: pointer;
       }
     }
   }
@@ -192,13 +320,13 @@
     opacity: 1;
 
     .gnav-close {
+      position: fixed;
       background: rgba(0, 0, 0, 0.8);
       width: 100%;
-      position: fixed;
       top: 0;
       bottom: 0;
       transition: all 0.2s;
-      z-index: 810;
+      z-index: 820;
     }
   }
 }
@@ -241,6 +369,7 @@
 
   .box-type2 {
     display: inline-block;
+    position: unset;
     padding: 0.5rem 1rem;
     color: #{$color5};
     background: #{$color2};
@@ -370,15 +499,12 @@
       &::after {
         display: inline-block;
         background: #{$color3};
-        content: ""; /* 要素に内容を追加 */
-        height: 2px; /* 下線の高さ */
-        position: absolute; /* 絶対位置指定 */
-        transform: scale(
-          0,
-          1
-        ); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
-        transition: transform 0.3s; /* 変形をアニメーション化 */
-        width: 100%; /* 要素の幅 */
+        content: "";
+        height: 2px;
+        position: absolute;
+        transform: scale(0, 1);
+        transition: transform 0.3s;
+        width: 100%;
       }
       &:hover {
         transform: scale(1, 1);
@@ -543,6 +669,7 @@
   }
 }
 
+// 「このサイトについて」フッター
 .about-us-footer {
   display: flex;
   flex-direction: column;
