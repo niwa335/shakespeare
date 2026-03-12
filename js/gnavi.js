@@ -8,7 +8,7 @@ const navClose = document.querySelector(".gnav-close");
 const hamBtn = document.querySelector(".hamburger-btn");
 const hamBtnClose = document.querySelector(".hamburger-btn-close");
 
-const width = window.matchMedia("(max-width: 750px)");
+const width = window.matchMedia("(max-width: 600px)");
 let pos = 0;
 
 // グローバルナビゲーションの表示と非表示
