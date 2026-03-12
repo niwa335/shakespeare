@@ -5,6 +5,7 @@
 }
 
 .bHeader {
+  height: 64px;
   transition: 0.5s;
 
   &.hide {
@@ -25,15 +26,7 @@
   // グローバルナビゲーション
   .gnav {
     display: flex;
-    width: 100%;
     align-items: center;
-
-    .logo {
-      width: auto;
-      .logo-link {
-        display: flex;
-      }
-    }
 
     .gnav-content {
       width: 100%;
@@ -88,7 +81,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100%;
       }
 
       .hamburger-btn {
@@ -164,7 +156,7 @@
         align-items: center;
         justify-content: center;
         top: 0.5rem;
-        right: 1.4rem;
+        right: 0.5rem;
         width: 48px;
         height: 48px;
         border-radius: 0.3rem;

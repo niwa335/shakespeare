@@ -53,6 +53,7 @@ div {
 }
 
 .bHeader {
+  height: 64px;
   transition: 0.5s;
 }
 .bHeader.hide {
@@ -68,14 +69,7 @@ div {
 }
 .bHeader .gnav {
   display: flex;
-  width: 100%;
   align-items: center;
-}
-.bHeader .gnav .logo {
-  width: auto;
-}
-.bHeader .gnav .logo .logo-link {
-  display: flex;
 }
 .bHeader .gnav .gnav-content {
   width: 100%;
@@ -123,7 +117,6 @@ div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
   }
   .bHeader .gnav-mobile .hamburger-btn {
     display: flex;
@@ -186,7 +179,7 @@ div {
     align-items: center;
     justify-content: center;
     top: 0.5rem;
-    right: 1.4rem;
+    right: 0.5rem;
     width: 48px;
     height: 48px;
     border-radius: 0.3rem;
