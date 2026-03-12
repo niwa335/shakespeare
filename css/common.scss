@@ -5,7 +5,12 @@
 }
 
 .bHeader {
-  transition: 0.5s;
+  height: 64px;
+  min-height: 64px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 
   &.hide {
     transform: translate3d(0, -140px, 0);
@@ -25,46 +30,48 @@
   // グローバルナビゲーション
   .gnav {
     display: flex;
-    width: 100%;
     align-items: center;
+    height: 100%;
+    transition: background 0.3s ease;
 
     .logo {
+      display: flex;
+      align-items: center;
       width: auto;
-      .logo-link {
-        display: flex;
-      }
+      height: 100%;
     }
 
     .gnav-content {
-      width: 100%;
-      align-items: center;
+      display: initial;
+      height: 100%;
 
-      // 横並び
       .gnav-list {
         display: flex;
+        position: relative;
+        flex-direction: row;
+        height: 100%;
 
         .gnav-item {
-          width: 20%;
-          max-width: 7.5rem;
+          display: flex;
+          width: 7rem;
+          margin: 0.5rem 0;
           border-right: 1px solid #{$color4};
           &:nth-of-type(5) {
             border-right: none;
           }
-        }
 
-        .gnav-link {
-          display: flex;
-          border-radius: 0.25rem;
-          padding-inline-start: 0.75rem;
-          padding-inline-end: 0.75rem;
-          width: auto;
-          align-items: center;
-          justify-content: center;
-          letter-spacing: 0.3px;
-          min-height: 3rem;
+          .gnav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            border-radius: 0.25rem;
+            letter-spacing: 0.3px;
+            min-height: 3rem;
 
-          &:hover {
-            background: #{$color3};
+            &:hover {
+              background: #{$color3};
+            }
           }
         }
       }
@@ -88,7 +95,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100%;
       }
 
       .hamburger-btn {
@@ -133,97 +139,97 @@
       }
     }
   }
+}
 
-  @include phone {
-    // スマホ用グローバルナビゲーション
-    .gnav-showing {
-      position: fixed;
-      height: 15rem;
-      width: calc(100% - 5rem);
-      max-width: 18rem;
-      min-width: 10rem;
-      min-height: 25rem;
-      top: 0;
-      right: 0;
-      transition: right 0.8s;
-      background: #{$color1};
-      z-index: 820;
-      visibility: visible;
-      border-radius: 0.25rem;
-      box-shadow:
-        0 1px 2px 0 rgba(60, 64, 67, 0.3),
-        0 1px 3px 1px rgba(60, 64, 67, 0.15);
+@include phone {
+  // スマホ用グローバルナビゲーション
+  .gnav-showing {
+    position: fixed;
+    height: 15rem;
+    width: calc(100% - 5rem);
+    max-width: 18rem;
+    min-width: 10rem;
+    min-height: 25rem;
+    top: 0;
+    right: 0;
+    transition: right 0.8s;
+    background: #{$color1};
+    z-index: 820;
+    visibility: visible;
+    border-radius: 0.25rem;
+    box-shadow:
+      0 1px 2px 0 rgba(60, 64, 67, 0.3),
+      0 1px 3px 1px rgba(60, 64, 67, 0.15);
 
-      .logo {
-        padding: 0.5rem 1rem;
-      }
+    .logo {
+      padding: 0.5rem 1rem;
+    }
 
-      .hamburger-btn-close {
-        display: flex;
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-        top: 0.5rem;
-        right: 1.4rem;
-        width: 48px;
-        height: 48px;
-        border-radius: 0.3rem;
+    .hamburger-btn-close {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      justify-content: center;
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 0.3rem;
 
-        .hamburger-icon-close {
-          display: block;
-          position: relative;
-          width: 30px;
+      .hamburger-icon-close {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 5px;
           height: 30px;
-
-          &::before,
-          &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 30px;
-            background-color: #{$color4};
-          }
-
-          &::before {
-            transform: translate(-50%, -50%) rotate(45deg);
-          }
-
-          &::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
-          }
+          background-color: #{$color4};
         }
 
-        &:hover {
-          background: #{$color3};
-          cursor: pointer;
+        &::before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(-45deg);
         }
       }
 
-      .gnav-list {
-        flex-direction: column;
+      &:hover {
+        background: #{$color3};
+        cursor: pointer;
       }
+    }
 
-      .gnav-item {
-        width: calc(100% - 0.5rem);
-      }
+    .gnav-list {
+      flex-direction: column;
+    }
 
-      .gnav-link {
-        display: flex;
-        height: 100%;
-        border-end-end-radius: 6.25rem;
-        border-start-end-radius: 6.25rem;
-        padding-inline-start: 0.5rem;
-        padding-inline-end: 0.75rem;
-        align-items: center;
-        letter-spacing: 0.3px;
-        min-height: 3rem;
-        border-left: 1rem solid #{$color4};
+    .gnav-item {
+      width: calc(100% - 0.5rem);
+    }
 
-        &:hover {
-          background: #{$color3};
-        }
+    .gnav-link {
+      display: flex;
+      height: 100%;
+      border-end-end-radius: 6.25rem;
+      border-start-end-radius: 6.25rem;
+      padding-inline-start: 0.5rem;
+      padding-inline-end: 0.75rem;
+      align-items: center;
+      letter-spacing: 0.3px;
+      min-height: 3rem;
+      border-left: 1rem solid #{$color4};
+
+      &:hover {
+        background: #{$color3};
       }
     }
   }
@@ -249,22 +255,26 @@
 }
 
 .bMain {
+  h1:first-letter {
+    font-size: 2em;
+    color: #{$color3};
+  }
+
   .headline {
-    margin: 0 1rem 2rem 1rem;
+    margin: 0 1rem 1rem 1rem;
     padding-inline-start: 2rem;
     padding-inline-end: 0.5rem;
-    background: linear-gradient(to bottom right, #{$color2}, #{$color3});
-    border-radius: 1rem;
     color: #{$color5};
   }
 
   .box-type1 {
     display: inline-block;
     position: relative;
-    margin-left: 0.5em;
+    margin: 0.5rem 0 0 0.5rem;
     padding: 0.2rem 1.5em;
     border-top: solid 3px #{$color4};
     border-bottom: solid 3px #{$color4};
+    color: #{$color5};
 
     &::before,
     &::after {
@@ -297,7 +307,7 @@
     display: grid;
     grid-gap: 1rem 1rem;
     grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem;
 
     .plays-list-item {
       grid-column-end: span 3;
@@ -397,7 +407,6 @@
       height: 3rem;
       padding-inline-start: 1rem;
 
-      // 矢印
       .plays-menu-list-link {
         display: flex;
         align-items: center;
@@ -415,15 +424,12 @@
       &::after {
         display: inline-block;
         background: #{$color3};
-        content: ""; /* 要素に内容を追加 */
-        height: 2px; /* 下線の高さ */
-        position: absolute; /* 絶対位置指定 */
-        transform: scale(
-          0,
-          1
-        ); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
-        transition: transform 0.3s; /* 変形をアニメーション化 */
-        width: 100%; /* 要素の幅 */
+        content: "";
+        height: 2px;
+        position: absolute;
+        transform: scale(0, 1);
+        transition: transform 0.3s;
+        width: 100%;
       }
       &:hover {
         transform: scale(1, 1);

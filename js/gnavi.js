@@ -1,6 +1,6 @@
 const page = document.querySelector(".page");
-const headerBar = document.querySelector(".bHeader");
 const body = document.querySelector(".body");
+const headerBar = document.querySelector(".bHeader");
 
 const nav = document.querySelector(".gnav");
 const navClose = document.querySelector(".gnav-close");

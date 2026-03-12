@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Noto Sans JP";
   font-style: normal;
@@ -53,7 +52,9 @@ div {
 }
 
 .bHeader {
-  transition: 0.5s;
+  height: 64px;
+  min-height: 64px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 .bHeader.hide {
   transform: translate3d(0, -140px, 0);
@@ -68,42 +69,45 @@ div {
 }
 .bHeader .gnav {
   display: flex;
-  width: 100%;
   align-items: center;
+  height: 100%;
+  transition: background 0.3s ease;
 }
 .bHeader .gnav .logo {
-  width: auto;
-}
-.bHeader .gnav .logo .logo-link {
   display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
 }
 .bHeader .gnav .gnav-content {
-  width: 100%;
-  align-items: center;
+  display: initial;
+  height: 100%;
 }
 .bHeader .gnav .gnav-content .gnav-list {
   display: flex;
+  position: relative;
+  flex-direction: row;
+  height: 100%;
 }
 .bHeader .gnav .gnav-content .gnav-list .gnav-item {
-  width: 20%;
-  max-width: 7.5rem;
+  display: flex;
+  width: 7rem;
+  margin: 0.5rem 0;
   border-right: 1px solid #78420e;
 }
 .bHeader .gnav .gnav-content .gnav-list .gnav-item:nth-of-type(5) {
   border-right: none;
 }
-.bHeader .gnav .gnav-content .gnav-list .gnav-link {
+.bHeader .gnav .gnav-content .gnav-list .gnav-item .gnav-link {
   display: flex;
-  border-radius: 0.25rem;
-  padding-inline-start: 0.75rem;
-  padding-inline-end: 0.75rem;
-  width: auto;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  border-radius: 0.25rem;
   letter-spacing: 0.3px;
   min-height: 3rem;
 }
-.bHeader .gnav .gnav-content .gnav-list .gnav-link:hover {
+.bHeader .gnav .gnav-content .gnav-list .gnav-item .gnav-link:hover {
   background: #9eb639;
 }
 @media (max-width: 750px) {
@@ -123,7 +127,6 @@ div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
   }
   .bHeader .gnav-mobile .hamburger-btn {
     display: flex;
@@ -160,8 +163,9 @@ div {
     cursor: pointer;
   }
 }
+
 @media (max-width: 750px) {
-  .bHeader .gnav-showing {
+  .gnav-showing {
     position: fixed;
     height: 15rem;
     width: calc(100% - 5rem);
@@ -177,27 +181,27 @@ div {
     border-radius: 0.25rem;
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
   }
-  .bHeader .gnav-showing .logo {
+  .gnav-showing .logo {
     padding: 0.5rem 1rem;
   }
-  .bHeader .gnav-showing .hamburger-btn-close {
+  .gnav-showing .hamburger-btn-close {
     display: flex;
     position: absolute;
     align-items: center;
     justify-content: center;
     top: 0.5rem;
-    right: 1.4rem;
+    right: 0.5rem;
     width: 48px;
     height: 48px;
     border-radius: 0.3rem;
   }
-  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close {
+  .gnav-showing .hamburger-btn-close .hamburger-icon-close {
     display: block;
     position: relative;
     width: 30px;
     height: 30px;
   }
-  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::before, .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
+  .gnav-showing .hamburger-btn-close .hamburger-icon-close::before, .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -206,23 +210,23 @@ div {
     height: 30px;
     background-color: #78420e;
   }
-  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::before {
+  .gnav-showing .hamburger-btn-close .hamburger-icon-close::before {
     transform: translate(-50%, -50%) rotate(45deg);
   }
-  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
+  .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
-  .bHeader .gnav-showing .hamburger-btn-close:hover {
+  .gnav-showing .hamburger-btn-close:hover {
     background: #9eb639;
     cursor: pointer;
   }
-  .bHeader .gnav-showing .gnav-list {
+  .gnav-showing .gnav-list {
     flex-direction: column;
   }
-  .bHeader .gnav-showing .gnav-item {
+  .gnav-showing .gnav-item {
     width: calc(100% - 0.5rem);
   }
-  .bHeader .gnav-showing .gnav-link {
+  .gnav-showing .gnav-link {
     display: flex;
     height: 100%;
     border-end-end-radius: 6.25rem;
@@ -234,11 +238,10 @@ div {
     min-height: 3rem;
     border-left: 1rem solid #78420e;
   }
-  .bHeader .gnav-showing .gnav-link:hover {
+  .gnav-showing .gnav-link:hover {
     background: #9eb639;
   }
 }
-
 @media (max-width: 750px) {
   .no-scroll {
     overflow: hidden;
@@ -255,21 +258,24 @@ div {
     z-index: 810;
   }
 }
+.bMain h1:first-letter {
+  font-size: 2em;
+  color: #9eb639;
+}
 .bMain .headline {
-  margin: 0 1rem 2rem 1rem;
+  margin: 0 1rem 1rem 1rem;
   padding-inline-start: 2rem;
   padding-inline-end: 0.5rem;
-  background: linear-gradient(to bottom right, #b6d149, #9eb639);
-  border-radius: 1rem;
   color: #382e43;
 }
 .bMain .box-type1 {
   display: inline-block;
   position: relative;
-  margin-left: 0.5em;
+  margin: 0.5rem 0 0 0.5rem;
   padding: 0.2rem 1.5em;
   border-top: solid 3px #78420e;
   border-bottom: solid 3px #78420e;
+  color: #382e43;
 }
 .bMain .box-type1::before, .bMain .box-type1::after {
   content: "";
@@ -297,7 +303,7 @@ div {
   display: grid;
   grid-gap: 1rem 1rem;
   grid-template-columns: repeat(12, minmax(0.5rem, 1fr));
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 .bMain .plays-list .plays-list-item {
   grid-column-end: span 3;
@@ -394,12 +400,12 @@ div {
 .bMain .plays-menu-list .plays-menu-list-item::after {
   display: inline-block;
   background: #9eb639;
-  content: ""; /* 要素に内容を追加 */
-  height: 2px; /* 下線の高さ */
-  position: absolute; /* 絶対位置指定 */
-  transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
-  transition: transform 0.3s; /* 変形をアニメーション化 */
-  width: 100%; /* 要素の幅 */
+  content: "";
+  height: 2px;
+  position: absolute;
+  transform: scale(0, 1);
+  transition: transform 0.3s;
+  width: 100%;
 }
 .bMain .plays-menu-list .plays-menu-list-item:hover {
   transform: scale(1, 1);
