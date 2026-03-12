@@ -13,7 +13,7 @@ Vue.createApp({})
       <div class="gnav-mobile">
         <div class="logo">
           <a class="logo-link" href="index.html">
-            <img src="img/title.png" alt="シェイクスピアめも">
+            <img src="img/title.png" alt="シェイクスピアめも" style="max-height:63px">
           </a>
         </div>
         <div class="gnav-hamburger">
@@ -26,7 +26,7 @@ Vue.createApp({})
       <div class="gnav">
         <div class="logo">
           <a class="logo-link" href="index.html">
-            <img src="img/title.png" alt="シェイクスピアめも">
+            <img src="img/title.png" alt="シェイクスピアめも" style="max-height:63px">
           </a>
         </div>
         <button class="hamburger-btn-close">
