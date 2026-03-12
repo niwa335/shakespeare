@@ -1,7 +1,7 @@
 @use "sass:math";
 
 // サイズ
-$phoneWidth: 750;
+$phoneWidth: 600;
 $tabWidth: 1250;
 
 // 色
@@ -43,6 +43,7 @@ h2,
 h3,
 ul,
 li,
+p,
 button {
   margin: 0;
   padding: 0;

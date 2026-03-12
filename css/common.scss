@@ -11,6 +11,7 @@
     transform 0.3s ease,
     background 0.3s ease,
     box-shadow 0.3s ease;
+  width: 100%;
 
   &.hide {
     transform: translate3d(0, -140px, 0);
@@ -33,10 +34,10 @@
     align-items: center;
     height: 100%;
     transition: background 0.3s ease;
+    width: 100%;
 
     .logo {
-      display: flex;
-      align-items: center;
+      display: block;
       width: auto;
       height: 100%;
     }
@@ -53,8 +54,10 @@
 
         .gnav-item {
           display: flex;
-          width: 7rem;
+          width: auto;
+          min-width: 3.5rem;
           margin: 0.5rem 0;
+          padding: 0 0.5rem;
           border-right: 1px solid #{$color4};
           &:nth-of-type(5) {
             border-right: none;
@@ -86,15 +89,14 @@
 
   // スマホ用Ｇナビ
   .gnav-mobile {
+    width: 100%;
     display: none;
 
     @include phone {
       display: flex;
 
       .logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
       }
 
       .hamburger-btn {
@@ -146,23 +148,25 @@
   .gnav-showing {
     position: fixed;
     height: 15rem;
-    width: calc(100% - 5rem);
+    width: calc(100% - 40px);
     max-width: 18rem;
-    min-width: 10rem;
+    min-width: 220px;
     min-height: 25rem;
     top: 0;
     right: 0;
-    transition: right 0.8s;
     background: #{$color1};
-    z-index: 820;
     visibility: visible;
     border-radius: 0.25rem;
     box-shadow:
       0 1px 2px 0 rgba(60, 64, 67, 0.3),
       0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    overflow: hidden;
+    transform: translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.24, 1, 0.32, 1);
+    z-index: 820;
 
     .logo {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.5rem;
     }
 
     .hamburger-btn-close {
@@ -270,8 +274,8 @@
   .box-type1 {
     display: inline-block;
     position: relative;
-    margin: 0.5rem 0 0 0.5rem;
-    padding: 0.2rem 1.5em;
+    margin: 0.3rem 0 0 0.5rem;
+    padding: 0.3rem 1.5em;
     border-top: solid 3px #{$color4};
     border-bottom: solid 3px #{$color4};
     color: #{$color5};
@@ -524,7 +528,7 @@
     margin: 1rem;
 
     .about-us-content {
-      margin: 2rem 0;
+      margin: 1.5rem 0;
     }
 
     .about-us-content-txt {
