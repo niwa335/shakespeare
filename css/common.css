@@ -317,7 +317,7 @@ div {
 .bMain .plays-list .plays-list-item:hover {
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
 }
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
   .bMain .plays-list .plays-list-item {
     grid-column-end: span 6;
   }
@@ -356,11 +356,8 @@ div {
   background: linear-gradient(transparent 70%, #9eb639 0%);
 }
 .bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary .plays-summary-content {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+  height: 70%;
+  place-content: center;
 }
 .bMain .dots {
   height: 1rem;
@@ -426,7 +423,7 @@ div {
   grid-column-end: span 3;
   justify-items: center;
 }
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
   .bMain .plays-detail .plays-detail-left {
     grid-column-end: span 4;
   }
@@ -444,17 +441,19 @@ div {
   border-right: double 8px #78420e;
 }
 .bMain .plays-detail .plays-detail-left .plays-detail-media {
-  margin: 2rem 0;
+  padding-top: 2rem;
+}
+.bMain .plays-detail .plays-detail-left .plays-detail-media img {
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0.3rem;
 }
 .bMain .plays-detail .plays-detail-center {
   grid-column-end: span 3;
-  position: relative;
-  margin: 2rem 1rem 0 2rem;
-  padding: 2em 1.5rem 1rem 1.5rem;
-  border: solid 3px #78420e;
-  border-radius: 8px;
+  padding: 1rem;
 }
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
   .bMain .plays-detail .plays-detail-center {
     grid-column-end: span 8;
   }
@@ -464,12 +463,40 @@ div {
     grid-column-end: span 12;
   }
 }
-.bMain .plays-detail .plays-detail-center .plays-detail-center-content {
+.bMain .plays-detail .plays-detail-center .plays-detail-center-theme {
+  padding-bottom: 1rem;
+}
+.bMain .plays-detail .plays-detail-center .plays-detail-center-theme .theme {
+  position: relative;
+}
+.bMain .plays-detail .plays-detail-center .plays-detail-center-theme .theme:after {
+  content: "";
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, #9eb639, transparent);
+}
+.bMain .plays-detail .plays-detail-center .plays-Characters {
+  position: relative;
+}
+.bMain .plays-detail .plays-detail-center .plays-Characters .plays-Characters-title {
   position: absolute;
-  top: -1.25rem;
-  left: -3rem;
-  padding: 0 9px;
   background: #d7d56f;
+  top: -1.5rem;
+  left: -1.5rem;
+}
+.bMain .plays-detail .plays-detail-center .plays-Characters .plays-Characters-list {
+  margin: 2rem 0rem 0 1rem;
+  padding: 2rem 1rem 1rem 1.5rem;
+  border: solid 3px #78420e;
+  border-radius: 8px;
+}
+.bMain .plays-detail .plays-detail-center .plays-Characters .plays-Characters-list .plays-Characters-item {
+  padding: 0.2rem 0;
+  border-bottom: 1px dashed #78420e;
+}
+.bMain .plays-detail .plays-detail-center .plays-Characters .plays-Characters-list .plays-Characters-item .character-name {
+  font-weight: 600;
+  padding-right: 2rem;
 }
 .bMain .plays-detail .plays-detail-right {
   grid-column-end: span 6;
@@ -479,7 +506,7 @@ div {
   border: solid 3px #78420e;
   border-radius: 8px;
 }
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
   .bMain .plays-detail .plays-detail-right {
     grid-column-end: span 12;
   }
@@ -495,6 +522,29 @@ div {
   left: -3rem;
   padding: 0 9px;
   background: #d7d56f;
+}
+.bMain .famous-saying {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0.5rem, 1fr));
+  padding: 2rem 1rem;
+}
+.bMain .famous-saying .famous-saying-content {
+  position: relative;
+  grid-column-end: span 1;
+  font-style: italic;
+  place-content: center;
+}
+@media (max-width: 1200px) {
+  .bMain .famous-saying .famous-saying-content {
+    grid-column-end: span 2;
+    justify-self: center;
+  }
+}
+.bMain .famous-saying .famous-saying-content .famous-saying-content-ja {
+  justify-self: end;
+}
+.bMain .famous-saying .famous-saying-content .famous-saying-content-en {
+  justify-self: start;
 }
 .bMain .about-us {
   margin: 1rem;

@@ -362,11 +362,8 @@
           }
 
           .plays-summary-content {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            line-clamp: 3;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
+            height: 70%;
+            place-content: center;
           }
         }
       }
@@ -469,17 +466,20 @@
       }
 
       .plays-detail-media {
-        margin: 2rem 0;
+        padding-top: 2rem;
+
+        img {
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          border-radius: 0.3rem;
+        }
       }
     }
 
     .plays-detail-center {
       grid-column-end: span 3;
-      position: relative;
-      margin: 2rem 1rem 0 2rem;
-      padding: 2em 1.5rem 1rem 1.5rem;
-      border: solid 3px #{$color4};
-      border-radius: 8px;
+      padding: 1rem;
 
       @include tablet {
         grid-column-end: span 8;
@@ -489,12 +489,46 @@
         grid-column-end: span 12;
       }
 
-      .plays-detail-center-content {
-        position: absolute;
-        top: -1.25rem;
-        left: -3rem;
-        padding: 0 9px;
-        background: #{$color1};
+      .plays-detail-center-theme {
+        padding-bottom: 1rem;
+
+        .theme {
+          position: relative;
+        }
+        .theme:after {
+          content: "";
+          display: block;
+          height: 4px;
+          background: linear-gradient(to right, #{$color3}, transparent);
+        }
+      }
+
+      .plays-Characters {
+        position: relative;
+
+        .plays-Characters-title {
+          position: absolute;
+          background: #{$color1};
+          top: -1.5rem;
+          left: -1.5rem;
+        }
+
+        .plays-Characters-list {
+          margin: 2rem 0rem 0 1rem;
+          padding: 2rem 1rem 1rem 1.5rem;
+          border: solid 3px #{$color4};
+          border-radius: 8px;
+
+          .plays-Characters-item {
+            padding: 0.2rem 0;
+            border-bottom: 1px dashed #{$color4};
+
+            .character-name {
+              font-weight: 600;
+              padding-right: 2rem;
+            }
+          }
+        }
       }
     }
 
@@ -520,6 +554,32 @@
         left: -3rem;
         padding: 0 9px;
         background: #{$color1};
+      }
+    }
+  }
+
+  .famous-saying {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0.5rem, 1fr));
+    padding: 2rem 1rem;
+
+    .famous-saying-content {
+      position: relative;
+      grid-column-end: span 1;
+      font-style: italic;
+      place-content: center;
+
+      @include tablet {
+        grid-column-end: span 2;
+        justify-self: center;
+      }
+
+      .famous-saying-content-ja {
+        justify-self: end;
+      }
+
+      .famous-saying-content-en {
+        justify-self: start;
       }
     }
   }
