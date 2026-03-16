@@ -4,6 +4,10 @@
   font-weight: 400;
   src: url(https://fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Light.woff2) format("woff2");
 }
+:root {
+  interpolate-size: allow-keywords;
+}
+
 body {
   margin: 0;
   font-size: 1rem;
@@ -42,9 +46,13 @@ button {
   border: none;
 }
 
-h1,
-div {
+h1 {
   word-break: auto-phrase;
+  overflow-wrap: anywhere;
+}
+
+p {
+  word-break: break-word;
   overflow-wrap: anywhere;
 }
 
@@ -98,7 +106,7 @@ div {
   margin: 0.5rem 0;
   border-right: 1px solid #78420e;
 }
-.bHeader .gnav .gnav-content .gnav-list .gnav-item:nth-of-type(5) {
+.bHeader .gnav .gnav-content .gnav-list .gnav-item:last-child {
   border-right: none;
 }
 .bHeader .gnav .gnav-content .gnav-list .gnav-item .gnav-link {
@@ -166,9 +174,8 @@ div {
     cursor: pointer;
   }
 }
-
 @media (max-width: 600px) {
-  .gnav-showing {
+  .bHeader .gnav-showing {
     position: fixed;
     height: 15rem;
     width: calc(100% - 40px);
@@ -183,13 +190,13 @@ div {
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
     overflow: hidden;
     transform: translateZ(0);
-    transition: transform 0.35s cubic-bezier(0.24, 1, 0.32, 1);
+    transition: transform 0.3s ease;
     z-index: 820;
   }
-  .gnav-showing .logo {
+  .bHeader .gnav-showing .logo {
     padding: 0.5rem 0.5rem;
   }
-  .gnav-showing .hamburger-btn-close {
+  .bHeader .gnav-showing .hamburger-btn-close {
     display: flex;
     position: absolute;
     align-items: center;
@@ -200,13 +207,13 @@ div {
     height: 48px;
     border-radius: 0.3rem;
   }
-  .gnav-showing .hamburger-btn-close .hamburger-icon-close {
+  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close {
     display: block;
     position: relative;
     width: 30px;
     height: 30px;
   }
-  .gnav-showing .hamburger-btn-close .hamburger-icon-close::before, .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
+  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::before, .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -215,23 +222,23 @@ div {
     height: 30px;
     background-color: #78420e;
   }
-  .gnav-showing .hamburger-btn-close .hamburger-icon-close::before {
+  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::before {
     transform: translate(-50%, -50%) rotate(45deg);
   }
-  .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
+  .bHeader .gnav-showing .hamburger-btn-close .hamburger-icon-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
-  .gnav-showing .hamburger-btn-close:hover {
+  .bHeader .gnav-showing .hamburger-btn-close:hover {
     background: #9eb639;
     cursor: pointer;
   }
-  .gnav-showing .gnav-list {
+  .bHeader .gnav-showing .gnav-list {
     flex-direction: column;
   }
-  .gnav-showing .gnav-item {
+  .bHeader .gnav-showing .gnav-item {
     width: calc(100% - 0.5rem);
   }
-  .gnav-showing .gnav-link {
+  .bHeader .gnav-showing .gnav-link {
     display: flex;
     height: 100%;
     border-end-end-radius: 6.25rem;
@@ -243,10 +250,11 @@ div {
     min-height: 3rem;
     border-left: 1rem solid #78420e;
   }
-  .gnav-showing .gnav-link:hover {
+  .bHeader .gnav-showing .gnav-link:hover {
     background: #9eb639;
   }
 }
+
 @media (max-width: 600px) {
   .no-scroll {
     overflow: hidden;
@@ -254,12 +262,12 @@ div {
     opacity: 1;
   }
   .no-scroll .gnav-close {
+    transition: background 0.3s ease;
     background: rgba(0, 0, 0, 0.8);
     width: 100%;
     position: fixed;
     top: 0;
     bottom: 0;
-    transition: all 0.2s;
     z-index: 810;
   }
 }
@@ -407,7 +415,7 @@ div {
   height: 2px;
   position: absolute;
   transform: scale(0, 1);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
   width: 100%;
 }
 .bMain .plays-menu-list .plays-menu-list-item:hover {
@@ -530,6 +538,71 @@ div {
   padding: 2rem 0.8rem 1rem 1rem;
   border: solid 3px #78420e;
   border-radius: 8px;
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore {
+  position: relative;
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-accordion {
+  position: relative;
+  margin-bottom: 0;
+  overflow: hidden;
+  transition: height 0.7s;
+  height: 500px;
+}
+@media (max-width: 1200px) {
+  .bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-accordion {
+    height: 150px;
+  }
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-accordion::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 80%, #d7d56f);
+}
+@media (max-width: 600px) {
+  .bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-accordion::after {
+    background: linear-gradient(180deg, transparent 50%, #d7d56f);
+  }
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-label {
+  display: flex;
+  position: absolute;
+  justify-self: center;
+  padding: 0.1rem 0.5rem;
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-label input {
+  display: none;
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-label:hover {
+  text-decoration: underline;
+  text-decoration-color: #9eb639;
+  text-underline-offset: 0.3rem;
+  cursor: pointer;
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-label::before {
+  content: "";
+  width: 20px;
+  height: 10px;
+  background-color: #9eb639;
+  clip-path: polygon(50% 10px, 0% 0%, 20px 0%);
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore .readmore-label:has(:checked)::before {
+  content: "";
+  width: 20px;
+  height: 10px;
+  background-color: #9eb639;
+  clip-path: polygon(50% 0%, 0% 10px, 20px 10px);
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore:has(:checked) .readmore-accordion {
+  height: auto;
+}
+.bMain .plays-detail .plays-detail-right .plays-story .plays-story-content .readmore:has(:checked) .readmore-accordion::after {
+  display: none;
 }
 .bMain .famous-saying {
   display: grid;
