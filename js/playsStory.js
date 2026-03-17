@@ -11,6 +11,7 @@ const romeoAndJuliet = document.querySelector(".romeoAndJuliet-story");
 
 let hamletCheckBox = document.querySelector(".readmore-checkbox-hamlet");
 let kingLearCheckBox = document.querySelector(".readmore-checkbox-kingLear");
+let othelloCheckBox = document.querySelector(".readmore-checkbox-othello");
 
 // テキストファイル外部読み込み
 async function story(className, fileName) {
@@ -36,9 +37,7 @@ if (titusAndronicus) {
 // アコーディオンUI対応
 function accordion(e) {
   if (!e.currentTarget.checked) {
-    this.name.scrollIntoView({
-      behavior: "smooth",
-    });
+    this.name.scrollIntoView();
   }
 }
 
@@ -49,5 +48,10 @@ hamletCheckBox.addEventListener("change", {
 
 kingLearCheckBox.addEventListener("change", {
   name: kingLear,
+  handleEvent: accordion,
+});
+
+othelloCheckBox.addEventListener("change", {
+  name: othello,
   handleEvent: accordion,
 });
