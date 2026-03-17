@@ -22,6 +22,7 @@
     <script src="https://unpkg.com/vue@3"></script>
     <script type="module" src="js/headerFooter.js"></script>
     <script type="module" src="js/gnavi.js"></script>
+    <script defer src="js/playsStory.js"></script>
 
     <title>シェイクスピアめも:喜劇</title>
     <meta name="description" content="シェイクスピア 簡単 物語 登場人物" />
@@ -35,69 +36,277 @@
         <div class="dots"></div>
         <h1 class="headline">喜劇</h1>
         <ul class="plays-menu-list">
-            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#hamlet">ヴェニスの商人</a></li>
-            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#kingLear">夏の夜の夢</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#merchantOfVenice">ヴェニスの商人</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#midsummerNightDream">夏の夜の夢</a></li>
+            <li class="plays-menu-list-item"><a class="plays-menu-list-link" href="#asYouLikeIt">お気に召すまま</a></li>
         </ul>
-        <div class="dash" id="hamlet"></div>
-        <section class="plays-detail">
-            <div class="plays-detail-left">
-                <h2 class="plays-detail-title">ヴェニスの商人</h2>
-                <div class="plays-detail-media">
-                    <img src="img/plays/hamlet.png" alt="ヴェニスの商人" width="500" height="600" />
+        <section id="merchantOfVenice">
+            <div class="dash"></div>
+            <div class="plays-detail">
+                <div class="plays-detail-left">
+                    <h2 class="plays-detail-title">ヴェニスの商人</h2>
+                    <div class="plays-detail-media">
+                        <img src="img/plays/hamlet.jpg" alt="ヴェニスの商人" width="300" height="400" />
+                    </div>
+                    <div></div>
                 </div>
-                <div></div>
+                <div class="plays-detail-center">
+                    <div class="plays-detail-center-theme">
+                        <h3 class="theme">父を殺し王位を奪い、母と再婚した叔父に、狂気を装いながら復讐を</h3>
+                    </div>
+                    <div class="plays-Characters">
+                        <div class="plays-Characters-title">
+                            <h3 class="box-type1">登場人物</h3>
+                        </div>
+                        <ul class="plays-Characters-list">
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ハムレット</stan>デンマークの王子
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">クローディアス</stan>デンマークの王&ensp;ハムレットの叔父
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ガートルード</stan>王妃&ensp;ハムレットの母
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">幽霊</stan>先代ハムレット王
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ホレイシオ</stan>ハムレットの親友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">オフィーリア</stan>ハムレットの恋人
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ポローニアス</stan>王の家臣&ensp;オフィーリアの父
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">レアーティーズ</stan>オフィーリアの兄
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ローゼンクランツ</stan>ハムレットの学友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ギルデンスターン</stan>ハムレットの学友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">フォーティンブラス</stan>ノルウェーの王子
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plays-detail-right">
+                    <div class="plays-story">
+                        <div class="plays-story-title">
+                            <h3 class="box-type1">物語</h3>
+                        </div>
+                        <div class="plays-story-content">
+                            <div class="readmore">
+                                <div class="readmore-accordion">
+                                    <p class="merchantOfVenice-story"></p>
+                                </div>
+                                <label class="readmore-label"><input class="checkbox-merchantOfVenice"
+                                        type="checkbox"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="plays-detail-center">
-                <div class="plays-detail-center-content">
-                    <h3 class="box-type1">登場人物</h3>
+            <div class="famous-saying">
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">生きるべきか、死ぬべきか、それが問題だ。（ハムレット）</p>
                 </div>
-                <div class="plays-Characters-detail">
-                    <p>ヴェニス……父</p>
-                    <p>ヴェニス……母</p>
-                    <p>ヴェニス……商人</p>
-                    <p>ヴェニス……父</p>
-                    <p>ヴェニス……母</p>
-                    <p>ヴェニス……商人</p>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-en">――To be, or not to be, that is the question.</p>
                 </div>
-            </div>
-            <div class="plays-detail-right">
-                <div class="plays-detail-right-content">
-                    <h3 class="box-type1">物語</h3>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">簡潔さこそが英知の<ruby>真髄<rt>しんずい</rt></ruby>である。（ポローニアス）</p>
                 </div>
-                <div class="plays-summary-detail">
-                    <p>雨ニモマケズ風ニモマケズ雪ニモ夏ノ暑サニモマケヌ丈夫ナカラダヲモチ慾ハナク決シテ瞋ラズイツモシヅカニワラッテヰル一日ニ玄米四合ト味噌ト少シノ野菜ヲタベアラユルコトヲジブンヲカンジョウニ入レズニヨクミキキシワカリソシテワスレズ野原ノ松ノ林ノ※(「「蔭」の「陰のつくり」に代えて「人がしら／髟のへん」、第4水準2-86-78)ノ小サナ萓ブキノ小屋ニヰテ東ニ病気ノコドモアレバ行ッテ看病シテヤリ西ニツカレタ母アレバ行ッテソノ稲ノ朿ヲ［＃「朿ヲ」はママ］負ヒ南ニ死ニサウナ人アレバ行ッテコハガラナクテモイヽトイヒ北ニケンクヮヤソショウガアレバツマラナイカラヤメロトイヒヒドリノトキハナミダヲナガシサムサノナツハオロオロアルキミンナニデクノボートヨバレホメラレモセズクニモサレズサウイフモノニワタシハナリタイ
-                    </p>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-en">――Brevity is the soul of wit.</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">何よりもまず、自分自身に誠実であることだ。（ポローニアス）</p>
                 </div>
             </div>
         </section>
-        <div class="dash" id="kingLear"></div>
-        <section class="plays-detail">
-            <div class="plays-detail-left">
-                <h2 class="plays-detail-title">夏の夜の夢</h2>
-                <div class="plays-detail-media">
-                    <img src="img/plays/hamlet.png" alt="夏の夜の夢" width="500" height="600" />
+        <section id="midsummerNightDream">
+            <div class="dash"></div>
+            <div class="plays-detail">
+                <div class="plays-detail-left">
+                    <h2 class="plays-detail-title">夏の夜の夢</h2>
+                    <div class="plays-detail-media">
+                        <img src="img/plays/hamlet.jpg" alt="夏の夜の夢" width="300" height="400" />
+                    </div>
+                    <div></div>
                 </div>
-                <div></div>
+                <div class="plays-detail-center">
+                    <div class="plays-detail-center-theme">
+                        <h3 class="theme">父を殺し王位を奪い、母と再婚した叔父に、狂気を装いながら復讐を</h3>
+                    </div>
+                    <div class="plays-Characters">
+                        <div class="plays-Characters-title">
+                            <h3 class="box-type1">登場人物</h3>
+                        </div>
+                        <ul class="plays-Characters-list">
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ハムレット</stan>デンマークの王子
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">クローディアス</stan>デンマークの王&ensp;ハムレットの叔父
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ガートルード</stan>王妃&ensp;ハムレットの母
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">幽霊</stan>先代ハムレット王
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ホレイシオ</stan>ハムレットの親友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">オフィーリア</stan>ハムレットの恋人
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ポローニアス</stan>王の家臣&ensp;オフィーリアの父
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">レアーティーズ</stan>オフィーリアの兄
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ローゼンクランツ</stan>ハムレットの学友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ギルデンスターン</stan>ハムレットの学友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">フォーティンブラス</stan>ノルウェーの王子
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plays-detail-right">
+                    <div class="plays-story">
+                        <div class="plays-story-title">
+                            <h3 class="box-type1">物語</h3>
+                        </div>
+                        <div class="plays-story-content">
+                            <div class="readmore">
+                                <div class="readmore-accordion">
+                                    <p class="midsummerNightDream-story"></p>
+                                </div>
+                                <label class="readmore-label"><input class="checkbox-midsummerNightDream"
+                                        type="checkbox"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="plays-detail-center">
-                <div class="plays-detail-center-content">
-                    <h3 class="box-type1">登場人物</h3>
+            <div class="famous-saying">
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">生きるべきか、死ぬべきか、それが問題だ。（ハムレット）</p>
                 </div>
-                <div class="plays-Characters-detail">
-                    <p>ヴェニス……父</p>
-                    <p>ヴェニス……母</p>
-                    <p>ヴェニス……商人</p>
-                    <p>ヴェニス……父</p>
-                    <p>ヴェニス……母</p>
-                    <p>ヴェニス……商人</p>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-en">――To be, or not to be, that is the question.</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">簡潔さこそが英知の<ruby>真髄<rt>しんずい</rt></ruby>である。（ポローニアス）</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-en">――Brevity is the soul of wit.</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">何よりもまず、自分自身に誠実であることだ。（ポローニアス）</p>
                 </div>
             </div>
-            <div class="plays-detail-right">
-                <div class="plays-detail-right-content">
-                    <h3 class="box-type1">物語</h3>
+        </section>
+        <section id="asYouLikeIt">
+            <div class="dash"></div>
+            <div class="plays-detail">
+                <div class="plays-detail-left">
+                    <h2 class="plays-detail-title">お気に召すまま</h2>
+                    <div class="plays-detail-media">
+                        <img src="img/plays/hamlet.jpg" alt="お気に召すまま" width="300" height="400" />
+                    </div>
+                    <div></div>
                 </div>
-                <div class="plays-summary-detail">
-                    <p>ヴェニスの商人という人物が恋愛と利益の葛藤を抱きました。</p>
+                <div class="plays-detail-center">
+                    <div class="plays-detail-center-theme">
+                        <h3 class="theme">父を殺し王位を奪い、母と再婚した叔父に、狂気を装いながら復讐を</h3>
+                    </div>
+                    <div class="plays-Characters">
+                        <div class="plays-Characters-title">
+                            <h3 class="box-type1">登場人物</h3>
+                        </div>
+                        <ul class="plays-Characters-list">
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ハムレット</stan>デンマークの王子
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">クローディアス</stan>デンマークの王&ensp;ハムレットの叔父
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ガートルード</stan>王妃&ensp;ハムレットの母
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">幽霊</stan>先代ハムレット王
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ホレイシオ</stan>ハムレットの親友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">オフィーリア</stan>ハムレットの恋人
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ポローニアス</stan>王の家臣&ensp;オフィーリアの父
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">レアーティーズ</stan>オフィーリアの兄
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ローゼンクランツ</stan>ハムレットの学友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">ギルデンスターン</stan>ハムレットの学友
+                            </li>
+                            <li class="plays-Characters-item">
+                                <stan class="character-name">フォーティンブラス</stan>ノルウェーの王子
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plays-detail-right">
+                    <div class="plays-story">
+                        <div class="plays-story-title">
+                            <h3 class="box-type1">物語</h3>
+                        </div>
+                        <div class="plays-story-content">
+                            <div class="readmore">
+                                <div class="readmore-accordion">
+                                    <p class="asYouLikeIt-story"></p>
+                                </div>
+                                <label class="readmore-label"><input class="checkbox-asYouLikeIt"
+                                        type="checkbox"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="famous-saying">
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">生きるべきか、死ぬべきか、それが問題だ。（ハムレット）</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-en">――To be, or not to be, that is the question.</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">簡潔さこそが英知の<ruby>真髄<rt>しんずい</rt></ruby>である。（ポローニアス）</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-en">――Brevity is the soul of wit.</p>
+                </div>
+                <div class="famous-saying-content">
+                    <p class="famous-saying-content-ja">何よりもまず、自分自身に誠実であることだ。（ポローニアス）</p>
                 </div>
             </div>
         </section>
