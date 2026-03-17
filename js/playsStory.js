@@ -11,6 +11,7 @@ const romeoAndJuliet = document.querySelector(".romeoAndJuliet-story");
 
 let hamletCheckBox = document.querySelector(".readmore-checkbox-hamlet");
 let kingLearCheckBox = document.querySelector(".readmore-checkbox-kingLear");
+let othelloCheckBox = document.querySelector(".readmore-checkbox-othello");
 
 // テキストファイル外部読み込み
 async function story(className, fileName) {
@@ -47,5 +48,10 @@ hamletCheckBox.addEventListener("change", {
 
 kingLearCheckBox.addEventListener("change", {
   name: kingLear,
+  handleEvent: accordion,
+});
+
+othelloCheckBox.addEventListener("change", {
+  name: othello,
   handleEvent: accordion,
 });
