@@ -36,9 +36,7 @@ if (titusAndronicus) {
 // アコーディオンUI対応
 function accordion(e) {
   if (!e.currentTarget.checked) {
-    this.name.scrollIntoView({
-      behavior: "smooth",
-    });
+    this.name.scrollIntoView();
   }
 }
 
