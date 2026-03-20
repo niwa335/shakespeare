@@ -36,8 +36,8 @@ Vue.createApp({})
           <ul class="gnav-list">
             <li class="gnav-item"><a class="gnav-link" href="fourGreatTragedies.html">四大悲劇</a></li>
             <li class="gnav-item"><a class="gnav-link" href="tragedies.html">悲劇</a></li>
-            <li class="gnav-item"><a class="gnav-link" href="histories.html">歴史劇</a></li>
             <li class="gnav-item"><a class="gnav-link" href="comedies.html">喜劇</a></li>
+            <li class="gnav-item"><a class="gnav-link" href="histories.html">史劇</a></li>
             <li class="gnav-item"><a class="gnav-link" href="romances.html">ロマンス劇</a></li>
           </ul>
         </nav>
