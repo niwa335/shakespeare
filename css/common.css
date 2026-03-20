@@ -359,7 +359,7 @@ p {
 }
 .bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary {
   width: 100%;
-  padding: 1rem 0.5rem 1rem 1rem;
+  padding: 1rem 0.8rem 1rem 1rem;
   border: #9eb639 solid 1px;
   border-left: none;
   border-start-end-radius: 0.3rem;
@@ -370,8 +370,8 @@ p {
   background: linear-gradient(transparent 70%, #9eb639 0%);
 }
 .bMain .plays-list .plays-list-item .plays-list-item-inner .plays-summary .plays-summary-content {
-  height: 70%;
   place-content: center;
+  padding-top: 1rem;
 }
 .bMain .dots {
   height: 1rem;
