@@ -2,44 +2,16 @@ let className = null;
 let fileName = null;
 
 const hamlet = document.querySelector(".hamlet-story");
-const kingLear = document.querySelector(".kingLear-story");
-const othello = document.querySelector(".othello-story");
-const macbeth = document.querySelector(".macbeth-story");
 const titusAndronicus = document.querySelector(".titusAndronicus-story");
-const juliusCaesar = document.querySelector(".juliusCaesar-story");
-const romeoAndJuliet = document.querySelector(".romeoAndJuliet-story");
-const henry6 = document.querySelector(".henry6-story");
-const richard3 = document.querySelector(".richard3-story");
 const venice = document.querySelector(".merchantOfVenice-story");
-const midsummer = document.querySelector(".midsummerNightDream-story");
-const asYouLikeIt = document.querySelector(".asYouLikeIt-story");
+const henry6 = document.querySelector(".henry6-story");
 const winterTale = document.querySelector(".winterTale-story");
-const tempest = document.querySelector(".tempest-story");
-
-let hamletCheckBox = document.querySelector(".checkbox-hamlet");
-let kingLearCheckBox = document.querySelector(".checkbox-kingLear");
-let othelloCheckBox = document.querySelector(".checkbox-othello");
-let macbethCheckBox = document.querySelector(".checkbox-macbeth");
-let titusCheckBox = document.querySelector(".checkbox-titusAndronicus");
-let juliusCaesarCheckBox = document.querySelector(".checkbox-juliusCaesar");
-let romeoAndJulietCheckBox = document.querySelector(".checkbox-romeoAndJuliet");
-let henry6CheckBox = document.querySelector(".checkbox-henry6");
-let richard3CheckBox = document.querySelector(".checkbox-richard3");
-let veniceCheckBox = document.querySelector(".checkbox-merchantOfVenice");
-let midsummerCheckBox = document.querySelector(".checkbox-midsummerNightDream");
-let asYouLikeItCheckBox = document.querySelector(".checkbox-asYouLikeIt");
-let winterTaleCheckBox = document.querySelector(".checkbox-winterTale");
-let tempestCheckBox = document.querySelector(".checkbox-tempest");
 
 // テキストファイル外部読み込み
 async function story(className, fileName) {
-  try {
-    let response = await fetch("txt/" + fileName + ".txt");
-    let text = await response.text();
-    className.innerText = text;
-  } catch (err) {
-    className.innerText = "ページを読み込み直してください。";
-  }
+  let response = await fetch("txt/" + fileName + ".txt");
+  let text = await response.text();
+  className.innerText = text;
 }
 
 // アコーディオンUI対応
@@ -51,6 +23,14 @@ function accordion(e) {
 
 // ページごとに必要な分だけ読み込む
 if (hamlet) {
+  const kingLear = document.querySelector(".kingLear-story");
+  const othello = document.querySelector(".othello-story");
+  const macbeth = document.querySelector(".macbeth-story");
+  let hamletCheckBox = document.querySelector(".checkbox-hamlet");
+  let kingLearCheckBox = document.querySelector(".checkbox-kingLear");
+  let othelloCheckBox = document.querySelector(".checkbox-othello");
+  let macbethCheckBox = document.querySelector(".checkbox-macbeth");
+
   // 外部.txt
   story(hamlet, "hamlet");
   story(kingLear, "kingLear");
@@ -80,6 +60,14 @@ if (hamlet) {
 }
 
 if (titusAndronicus) {
+  const juliusCaesar = document.querySelector(".juliusCaesar-story");
+  const romeoAndJuliet = document.querySelector(".romeoAndJuliet-story");
+  let titusCheckBox = document.querySelector(".checkbox-titusAndronicus");
+  let juliusCaesarCheckBox = document.querySelector(".checkbox-juliusCaesar");
+  let romeoAndJulietCheckBox = document.querySelector(
+    ".checkbox-romeoAndJuliet",
+  );
+
   story(titusAndronicus, "titusAndronicus");
   story(juliusCaesar, "juliusCaesar");
   story(romeoAndJuliet, "romeoAndJuliet");
@@ -99,6 +87,14 @@ if (titusAndronicus) {
 }
 
 if (venice) {
+  const midsummer = document.querySelector(".midsummerNightDream-story");
+  const asYouLikeIt = document.querySelector(".asYouLikeIt-story");
+  let veniceCheckBox = document.querySelector(".checkbox-merchantOfVenice");
+  let midsummerCheckBox = document.querySelector(
+    ".checkbox-midsummerNightDream",
+  );
+  let asYouLikeItCheckBox = document.querySelector(".checkbox-asYouLikeIt");
+
   story(venice, "merchantOfVenice");
   story(midsummer, "midsummerNightDream");
   story(asYouLikeIt, "asYouLikeIt");
@@ -118,6 +114,10 @@ if (venice) {
 }
 
 if (henry6) {
+  const richard3 = document.querySelector(".richard3-story");
+  let henry6CheckBox = document.querySelector(".checkbox-henry6");
+  let richard3CheckBox = document.querySelector(".checkbox-richard3");
+
   story(henry6, "henry6");
   story(richard3, "richard3");
 
@@ -132,6 +132,10 @@ if (henry6) {
 }
 
 if (winterTale) {
+  const tempest = document.querySelector(".tempest-story");
+  let winterTaleCheckBox = document.querySelector(".checkbox-winterTale");
+  let tempestCheckBox = document.querySelector(".checkbox-tempest");
+
   story(winterTale, "winterTale");
   story(tempest, "tempest");
 
