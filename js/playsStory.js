@@ -33,9 +33,13 @@ let tempestCheckBox = document.querySelector(".checkbox-tempest");
 
 // テキストファイル外部読み込み
 async function story(className, fileName) {
-  let response = await fetch("txt/" + fileName + ".txt");
-  let text = await response.text();
-  className.innerText = text;
+  try {
+    let response = await fetch("txt/" + fileName + ".txt");
+    let text = await response.text();
+    className.innerText = text;
+  } catch (err) {
+    className.innerText = "ページを読み込み直してください。";
+  }
 }
 
 // アコーディオンUI対応
@@ -94,20 +98,6 @@ if (titusAndronicus) {
   });
 }
 
-if (henry6) {
-  story(henry6, "henry6");
-  story(richard3, "richard3");
-
-  henry6CheckBox.addEventListener("change", {
-    name: henry6,
-    handleEvent: accordion,
-  });
-  richard3CheckBox.addEventListener("change", {
-    name: richard3,
-    handleEvent: accordion,
-  });
-}
-
 if (venice) {
   story(venice, "merchantOfVenice");
   story(midsummer, "midsummerNightDream");
@@ -123,6 +113,20 @@ if (venice) {
   });
   asYouLikeItCheckBox.addEventListener("change", {
     name: asYouLikeIt,
+    handleEvent: accordion,
+  });
+}
+
+if (henry6) {
+  story(henry6, "henry6");
+  story(richard3, "richard3");
+
+  henry6CheckBox.addEventListener("change", {
+    name: henry6,
+    handleEvent: accordion,
+  });
+  richard3CheckBox.addEventListener("change", {
+    name: richard3,
     handleEvent: accordion,
   });
 }
